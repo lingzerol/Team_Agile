@@ -8,3 +8,6 @@
 /.vs/Team_Agile/v15/Server/sqlite3/storage.ide-wal
 /.vs/Team_Agile/v15/.suo
 /Team_Agile/obj/Debug
+/Lib/obj/Debug
+/Test'/obj/Debug
+/obj/Debug
