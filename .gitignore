@@ -12,8 +12,8 @@
 /Test'/obj/Debug
 /obj/Debug
 /.vs/Team_Agile/v16/Server/sqlite3
-*.cache
 /.vs/Team_Agile/v16
 /Lib/bin/Debug
 /Team_Agile/bin/Debug
 /Test/bin/Debug
+/Test/obj/Debug
