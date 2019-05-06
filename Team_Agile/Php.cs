@@ -29,7 +29,7 @@ namespace Team_Agile
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = @"G:\Chrome下载\php-7.3.5-nts-Win32-VC15-x64\php.exe",
+                    FileName = @"D:\暨南大学\大三\敏捷开发\php\php.exe",
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardInput = true,
