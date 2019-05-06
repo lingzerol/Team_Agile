@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    public class Class1
+    class HttpPost
     {
     }
 }
