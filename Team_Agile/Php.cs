@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 namespace Team_Agile
 {
     public class Php
@@ -25,11 +26,14 @@ namespace Team_Agile
         }
         private Process GetProcess(string command) {
             command = PreProcess(command);
+            //和设置当前目录的完全限定路径。
+            string str = System.Windows.Forms.Application.StartupPath;
+            string TargetPath = str.Substring(0, str.Length - 10);
             Process process = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = @"D:\暨南大学\大三\敏捷开发\php\php.exe",
+                    FileName = @"D:\Team Agile\Team_Agile\Team_Agile\Properties\php\php.exe",
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardInput = true,
