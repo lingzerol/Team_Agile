@@ -92,5 +92,13 @@ namespace Test
             Assert.AreEqual("casper", phpRunner.run());
 
         }
+
+        [TestMethod]
+        public void RunTest()
+        {
+            PHPRunner phpRunner = new PHPRunner();
+            phpRunner.Code= "<?php\n echo 'hello';";
+            Assert.AreEqual("hello", phpRunner.run());
+        }
     }
 }
