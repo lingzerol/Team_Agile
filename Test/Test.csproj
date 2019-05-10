@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib.csproj">
+      <Project>{AADE2F49-85D9-42A5-9B97-06064B31E5AD}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Team_Agile\Team_Agile.csproj">
       <Project>{9C3DDB93-A790-429B-AEB0-ECB3EAFB53F1}</Project>
       <Name>Team_Agile</Name>

@@ -3,6 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Team_Agile;
+using Lib;
+
 namespace Test
 {
     /// <summary>
@@ -61,12 +63,23 @@ namespace Test
         [TestMethod]
         public void GetTest()
         {
-            Get get = new Team_Agile.Get();
-            String param = "who=casper";
-            String expectedRes = "casper";
-            String res = get.GetRequest(param);
-            Console.WriteLine(res);
-            Assert.AreEqual(expectedRes, res);
+            PHPRunner phpRunner = new PHPRunner();
+            phpRunner.SetCommandPath("../../../php");
+            phpRunner.Code = "<?php\n echo $_GET['who'];";
+            phpRunner.QueryString = "who=casper";
+           // phpRunner.PostData = "who=casper";
+            Assert.AreEqual("casper", phpRunner.run());
+
+        }
+        [TestMethod]
+        public void PostTest()
+        {
+            PHPRunner phpRunner = new PHPRunner();
+            phpRunner.SetCommandPath("../../../php");
+            phpRunner.Code = "<?php\n echo $_POST['who'];";
+            phpRunner.PostData = "who=casper";
+            Assert.AreEqual("casper", phpRunner.run());
+
         }
     }
 }
