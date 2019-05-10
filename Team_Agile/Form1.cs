@@ -16,5 +16,12 @@ namespace Team_Agile
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string str = System.Windows.Forms.Application.StartupPath;
+            string TargetPath = str.Substring(0, str.Length - 9) + "Properties\\php\\php.exe";
+             MessageBox.Show(TargetPath);
+        }
     }
 }
