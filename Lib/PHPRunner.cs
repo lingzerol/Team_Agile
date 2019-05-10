@@ -23,6 +23,12 @@ namespace Lib
             return bResult;
         }
 
+        public  PHPRunner()
+        {
+            this.SetCommandPath("../../../php");
+        }
+
+
 
 
         public String run()

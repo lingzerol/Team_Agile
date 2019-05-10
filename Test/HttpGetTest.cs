@@ -64,7 +64,7 @@ namespace Test
         public void GetTest()
         {
             PHPRunner phpRunner = new PHPRunner();
-            phpRunner.SetCommandPath("../../../php");
+            //phpRunner.SetCommandPath("../../../php");
             phpRunner.Code = "<?php\n echo $_GET['who'];";
             phpRunner.QueryString = "who=casper";
            // phpRunner.PostData = "who=casper";
@@ -72,10 +72,21 @@ namespace Test
 
         }
         [TestMethod]
+        public void ServerTest()
+        {
+            PHPRunner phpRunner = new PHPRunner();
+            //phpRunner.SetCommandPath("../../../php");
+            phpRunner.Code = "<?php\n echo $_SERVER['QUERY_STRING'];";
+            phpRunner.QueryString = "who=casper";
+            // phpRunner.PostData = "who=casper";
+            Assert.AreEqual("who=casper", phpRunner.run());
+
+        }
+        [TestMethod]
         public void PostTest()
         {
             PHPRunner phpRunner = new PHPRunner();
-            phpRunner.SetCommandPath("../../../php");
+            //phpRunner.SetCommandPath("../../../php");
             phpRunner.Code = "<?php\n echo $_POST['who'];";
             phpRunner.PostData = "who=casper";
             Assert.AreEqual("casper", phpRunner.run());
