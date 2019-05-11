@@ -1,4 +1,4 @@
-﻿namespace Team_Agile
+﻿namespace Team_Agile.Pages
 {
     partial class ProblemStructure
     {

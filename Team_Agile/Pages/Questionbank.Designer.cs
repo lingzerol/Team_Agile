@@ -59,6 +59,7 @@
             this.Controls.Add(this.show_question);
             this.Name = "Questionbank";
             this.Text = "Questionbank";
+            this.Load += new System.EventHandler(this.Questionbank_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

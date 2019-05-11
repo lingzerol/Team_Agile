@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team_Agile.Pages
+namespace Team_Agile
 {
-    public partial class ProblemStructure : Form
+    public partial class Form2 : Form
     {
-        public ProblemStructure()
+        public Form2()
         {
             InitializeComponent();
+                Pages.Questionbank q = new Pages.Questionbank();
+                q.TopLevel = false;
+                panel1.Controls.Add(q);
+                q.Show();
         }
 
-        private void ProblemStructure_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

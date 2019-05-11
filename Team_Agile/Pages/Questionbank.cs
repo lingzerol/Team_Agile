@@ -24,9 +24,14 @@ namespace Team_Agile.Pages
             this.show_question.View = View.Details;
             this.show_question.Scrollable = true;
 
-            this.show_question.Columns.Add("Pro.ID", 70, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Problem Title", 300, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Ratio(Accepted/Submissions)", 150, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Pro.ID", 100, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Problem Title", 350, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Ratio(Accepted/Submissions)", 200, HorizontalAlignment.Center);
+        }
+
+        private void Questionbank_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
