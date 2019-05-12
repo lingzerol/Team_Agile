@@ -100,5 +100,6 @@ namespace Test
             phpRunner.Code= "<?php\n echo 'hello';";
             Assert.AreEqual("hello", phpRunner.run());
         }
+
     }
 }

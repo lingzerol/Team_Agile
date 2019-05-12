@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    class StructureOfProblem
+    public class StructureOfProblem
     {
         // 问题数据结构
         private string questionName;

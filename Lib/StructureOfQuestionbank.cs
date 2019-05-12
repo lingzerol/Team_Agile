@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Lib
 {
-    class StructureOfQuestionbank
+    public class StructureOfQuestionbank
     {
         private int problemID;
         private string problemTitle;
