@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HttpPost.cs" />
-    <Compile Include="Php.cs" />
+    <Compile Include="PHPRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StructureOfProblem.cs" />
+    <Compile Include="StructureOfQuestionbank.cs" />
+    <Compile Include="XmlOperator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
