@@ -21,5 +21,10 @@ namespace Team_Agile
                 q.Show();
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            //string str = AppDomain.CurrentDomain.BaseDirectory;
+            //MessageBox.Show(str);
+        }
     }
 }

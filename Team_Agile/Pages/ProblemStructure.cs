@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lib;
 
 namespace Team_Agile.Pages
 {
@@ -19,6 +20,8 @@ namespace Team_Agile.Pages
 
         private void ProblemStructure_Load(object sender, EventArgs e)
         {
+            XmlOperator xmloperator = new XmlOperator();
+
 
         }
     }
