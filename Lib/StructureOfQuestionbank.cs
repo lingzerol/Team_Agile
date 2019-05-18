@@ -6,13 +6,15 @@ using System.Text;
 
 namespace Lib
 {
+    [Serializable]
     public class StructureOfQuestionbank
     {
-        private int problemID;
-        private string problemTitle;
-        private int accepted;
-        private int submissions;
-        private float ratio;
+        public static int problemID;
+        public static String problemTitle;
+        public static int accepted;
+        public static int submissions;
+        public static float ratio;
+        public static StructureOfProblem structureOfProblem;
 
         public int ProblemID { get => problemID; set => problemID = value; }
         public string ProblemTitle { get => problemTitle; set => problemTitle = value; }

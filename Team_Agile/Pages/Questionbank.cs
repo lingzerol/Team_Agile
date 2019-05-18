@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lib;
 
 namespace Team_Agile.Pages
 {
@@ -32,6 +33,26 @@ namespace Team_Agile.Pages
         private void Questionbank_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //private void Test_Click(object sender, EventArgs e)
+        //{
+        //    ProblemStructure problemStructure = new ProblemStructure();
+        //    problemStructure.Show();
+        //    this.Hide();
+        //}
+
+        private void Test_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Confirm_Click(object sender, EventArgs e)
+        {
+            StructureOfQuestionbank.problemTitle = test.Text;
+            ProblemStructure problemStructure = new ProblemStructure();
+            problemStructure.Show();
+            this.Hide();
         }
     }
 }
