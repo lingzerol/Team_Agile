@@ -21,5 +21,9 @@ namespace Team_Agile
                 q.Show();
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
