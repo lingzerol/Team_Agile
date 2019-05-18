@@ -55,6 +55,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ProblemUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ProblemUpdate.Designer.cs">
+      <DependentUpon>ProblemUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Questionbank.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProblemStructure.resx">
       <DependentUpon>ProblemStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProblemUpdate.resx">
+      <DependentUpon>ProblemUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Questionbank.resx">
       <DependentUpon>Questionbank.cs</DependentUpon>
@@ -103,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib.csproj">
+      <Project>{AADE2F49-85D9-42A5-9B97-06064B31E5AD}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
