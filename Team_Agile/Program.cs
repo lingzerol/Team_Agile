@@ -26,6 +26,8 @@ namespace Team_Agile
             problem1.ProblemID = "1";
             problem1.QuestionName = "动态规划";
             problems.Add(problem1);
+            problems.Add(problem1);
+            problems.Add(problem1);
             Application.Run(new Questionbank(problems));
         }
     }

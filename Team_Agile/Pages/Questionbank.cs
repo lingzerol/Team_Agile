@@ -14,6 +14,7 @@ namespace Team_Agile.Pages
     public partial class Questionbank : Form
     {
         private List<StructureOfProblem> problems;
+        private Button btn = new Button();
         public Questionbank(List<StructureOfProblem> problems)
         {
             InitializeComponent();
@@ -29,19 +30,20 @@ namespace Team_Agile.Pages
             this.show_question.Scrollable = true;
 
             this.show_question.Columns.Add("Pro.Status", 230, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Pro.ID", 150, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Pro.ID", 170, HorizontalAlignment.Center);
             this.show_question.Columns.Add("Problem Title", 360, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("", 130, HorizontalAlignment.Center);
+            //this.show_question.Columns.Add("", 130, HorizontalAlignment.Center);
         }
         private void showlist(List<StructureOfProblem> problems)
         {
+            
+            
             for(int i = 0; i < problems.Count(); i++)
             {
                 ListViewItem list = new ListViewItem();
                 list.Text = problems[i].AcceptsRate;
                 list.SubItems.Add(problems[i].ProblemID);
                 list.SubItems.Add(problems[i].QuestionName);
-                list.SubItems.Add("删除");
                 this.show_question.Items.Add(list);
             }
         }
@@ -67,12 +69,54 @@ namespace Team_Agile.Pages
 
         private void show_question_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (this.show_question.SelectedItems.Count > 0)
+            {
+                this.btn.Location = new Point(this.show_question.SelectedItems[0].SubItems[3].Bounds.Left,
+                    this.show_question.SelectedItems[0].SubItems[3].Bounds.Top);
+                this.btn.Visible = true;
+            }
+           
         }
+        private void buttondelete_Click(object sender, EventArgs e)
+        {
+            String text = "";
+            for(int i=0;i<this.show_question.Items.Count;i++)
+            {
+                if (this.show_question.Items[i].Checked == true)
+                {
+                    text += i
+;                }
+            }
+            MessageBox.Show(text);
+        }
+
         //添加按钮
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("添加");
+        }
+
+
+     
+
+        private void Item_select(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if(this.show_question.SelectedItems.Count==1)
+            MessageBox.Show(e.Item.Text.ToString());
+
+        }
+
+        private void show_question_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+           
+           //this.show_question.Items[e.Index].Checked = !this.show_question.Items[e.Index].Checked;
+            MessageBox.Show("num:"+ this.show_question.Items[e.Index].Checked);
+        }
+
+
+        private void show_question_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,16 +35,20 @@ namespace Team_Agile.Pages
             this.test = new System.Windows.Forms.TextBox();
             this.confirm = new System.Windows.Forms.Button();
             this.AddProblem = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // show_question
             // 
+            this.show_question.CheckBoxes = true;
+            this.show_question.FullRowSelect = true;
             this.show_question.Location = new System.Drawing.Point(12, 67);
             this.show_question.Name = "show_question";
             this.show_question.Size = new System.Drawing.Size(1155, 580);
             this.show_question.TabIndex = 0;
             this.show_question.UseCompatibleStateImageBehavior = false;
-            this.show_question.SelectedIndexChanged += new System.EventHandler(this.show_question_SelectedIndexChanged);
+            this.show_question.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.show_question_ItemCheck);
+            this.show_question.SelectedIndexChanged += new System.EventHandler(this.show_question_SelectedIndexChanged_1);
             // 
             // label1
             // 
@@ -82,20 +86,31 @@ namespace Team_Agile.Pages
             // 
             this.AddProblem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddProblem.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.AddProblem.Location = new System.Drawing.Point(896, 29);
+            this.AddProblem.Location = new System.Drawing.Point(112, 19);
             this.AddProblem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddProblem.Name = "AddProblem";
-            this.AddProblem.Size = new System.Drawing.Size(78, 25);
+            this.AddProblem.Size = new System.Drawing.Size(95, 32);
             this.AddProblem.TabIndex = 4;
             this.AddProblem.Text = "添加";
             this.AddProblem.UseVisualStyleBackColor = true;
             this.AddProblem.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "删除所选";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttondelete_Click);
             // 
             // Questionbank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.AddProblem);
             this.Controls.Add(this.confirm);
             this.Controls.Add(this.test);
@@ -116,6 +131,7 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.TextBox test;
         private System.Windows.Forms.Button confirm;
         private Button AddProblem;
+        private Button button1;
 
         public ListView Show_question { get => show_question; set => show_question = value; }
 
