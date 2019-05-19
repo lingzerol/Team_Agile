@@ -60,28 +60,34 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox1.Location = new System.Drawing.Point(463, 37);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(450, 35);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "0001";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(463, 113);
+            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(463, 112);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(450, 34);
+            this.textBox2.Size = new System.Drawing.Size(450, 35);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "HelloWorld";
             // 
             // SourceCode
             // 
+            this.SourceCode.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SourceCode.Location = new System.Drawing.Point(134, 193);
             this.SourceCode.Multiline = true;
             this.SourceCode.Name = "SourceCode";
             this.SourceCode.Size = new System.Drawing.Size(929, 427);
             this.SourceCode.TabIndex = 4;
+            this.SourceCode.Text = "echo \"Hello world\";";
             // 
             // button1
             // 

@@ -26,6 +26,12 @@ namespace Team_Agile.Pages
         private void button1_Click(object sender, EventArgs e)
         {
             PHPRunner php = new PHPRunner();
+            php.Code = "<?php\n" + this.SourceCode.Text;
+            string result = php.run();
+            if(result=="Hello World")
+            {
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
