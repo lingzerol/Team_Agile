@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Team_Agile.Pages;
 using Lib;
 namespace Team_Agile
 {
@@ -17,7 +18,7 @@ namespace Team_Agile
             ProblemList.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            Application.Run(new Form1());
         }
     }
 }
