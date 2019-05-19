@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Team_Agile.Pages;
-using Lib;
+
 namespace Team_Agile
 {
     static class Program
@@ -15,7 +14,6 @@ namespace Team_Agile
         [STAThread]
         static void Main()
         {
-            ProblemList.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
