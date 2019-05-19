@@ -10,18 +10,19 @@ namespace Lib
     public class StructureOfProblem
     {
         // 问题数据结构
-        private String questionName = "";
-        private String timeLimitIndex = "";
-        private String memoryLimitIndex = "";
-        private int totalSubmits = 0;
-        private int totalAccepts = 0;
-        private string acceptsRate = "";
-        private String questionDescription = "";
-        private String inputDescription = "";
-        private String outputDescription = "";
-        private String inputSample = "";
-        private String outputSample = "";
-        private String hint = "";
+        private string questionName;
+        private string timeLimitIndex;
+        private string memoryLimitIndex;
+        private string totalSubmits;
+        private string totalAccepts;
+        private string acceptsRate;
+        private string questionDescription;
+        private string inputDescription;
+        private string outputDescription;
+        private string inputSample;
+        private string outputSample;
+        private string hint;
+        private int problemID;
 
         public string QuestionName { get => questionName; set => questionName = value; }
         public string TimeLimitIndex { get => timeLimitIndex; set => timeLimitIndex = value; }
@@ -35,5 +36,6 @@ namespace Lib
         public string InputSample { get => inputSample; set => inputSample = value; }
         public string OutputSample { get => outputSample; set => outputSample = value; }
         public string Hint { get => hint; set => hint = value; }
+        public int ProblemID { get => problemID; set => problemID = value; }
     }
 }

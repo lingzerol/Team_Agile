@@ -9,13 +9,21 @@ namespace Lib
     [Serializable]
     public class StructureOfQuestionbank
     {
-        public static int problemID;
-        public static String problemTitle;
-        public static int accepted;
-        public static int submissions;
-        public static float ratio;
-        public static StructureOfProblem structureOfProblem;
+        private int problemID;
+        private string problemTitle;
+        private int accepted;
+        private int submissions;
+        private float ratio;
+        public StructureOfQuestionbank() {
 
+        }
+        public StructureOfQuestionbank(StructureOfProblem problem) {
+            ProblemID = problem.ProblemID;
+            ProblemTitle = problem.QuestionName;
+            accepted = 0;
+            submissions = 0;
+            ratio = 0;
+        }
         public int ProblemID { get => problemID; set => problemID = value; }
         public string ProblemTitle { get => problemTitle; set => problemTitle = value; }
         public int Accepted { get => accepted; set => accepted = value; }
