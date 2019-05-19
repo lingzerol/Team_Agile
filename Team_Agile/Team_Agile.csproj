@@ -61,7 +61,6 @@
     <Compile Include="Pages\Questionbank.Designer.cs">
       <DependentUpon>Questionbank.cs</DependentUpon>
     </Compile>
-    <Compile Include="Php.cs" />
     <Compile Include="Pages\ProblemStructure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +102,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib.csproj">
+      <Project>{aade2f49-85d9-42a5-9b97-06064b31e5ad}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
