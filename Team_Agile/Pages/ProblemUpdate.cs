@@ -14,12 +14,13 @@ namespace Team_Agile.Pages
     public partial class ProblemUpdate : Form
     {
         public StructureOfProblem problem;
+        public int problemID;
 
         public ProblemUpdate()
         {
             InitializeComponent();
-            //readProblem();
-            //showProblem();
+            readProblem();
+            showProblem();
 
 
         }
@@ -60,7 +61,7 @@ namespace Team_Agile.Pages
             this.Update_OutputDescription.Text = problem.OutputDescription;
             this.Update_OutputSamples.Text = problem.OutputSample;
             this.Update_PassPercent.Text = problem.AcceptsRate;
-            this.Update_ProblemDescription.Text = problem.QuestionDescription;
+            this.Update_QuestionDescription.Text = problem.QuestionDescription;
             this.Update_ProblemName.Text = problem.QuestionName;
         }
 
@@ -74,8 +75,9 @@ namespace Team_Agile.Pages
             problem.OutputDescription = this.Update_OutputDescription.Text;
             problem.OutputSample = this.Update_OutputSamples.Text;
             problem.AcceptsRate = this.Update_PassPercent.Text;
-            problem.QuestionDescription = this.Update_ProblemDescription.Text;
+            problem.QuestionDescription = this.Update_QuestionDescription.Text;
             problem.QuestionName = this.Update_ProblemName.Text;
+            //将问题修改更新到保存题目的地方
         }
 
         private void Update_ConfirmBtn_Click(object sender, EventArgs e)

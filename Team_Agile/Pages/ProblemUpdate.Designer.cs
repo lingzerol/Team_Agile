@@ -38,7 +38,7 @@
             this.Update_TotalSubmitNum = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Update_ProblemDescription = new System.Windows.Forms.TextBox();
+            this.Update_QuestionDescription = new System.Windows.Forms.TextBox();
             this.Update_InputDescription = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Update_OutputDescription = new System.Windows.Forms.TextBox();
@@ -157,21 +157,21 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "问题描述";
             // 
-            // Update_ProblemDescription
+            // Update_QuestionDescription
             // 
-            this.Update_ProblemDescription.AcceptsReturn = true;
-            this.Update_ProblemDescription.AcceptsTab = true;
-            this.Update_ProblemDescription.BackColor = System.Drawing.Color.AliceBlue;
-            this.Update_ProblemDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Update_ProblemDescription.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.Update_ProblemDescription.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.Update_ProblemDescription.Location = new System.Drawing.Point(70, 168);
-            this.Update_ProblemDescription.Multiline = true;
-            this.Update_ProblemDescription.Name = "Update_ProblemDescription";
-            this.Update_ProblemDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Update_ProblemDescription.Size = new System.Drawing.Size(743, 23);
-            this.Update_ProblemDescription.TabIndex = 11;
-            this.Update_ProblemDescription.Text = "Calculate A + B\r\nzxz\r\nczcz";
+            this.Update_QuestionDescription.AcceptsReturn = true;
+            this.Update_QuestionDescription.AcceptsTab = true;
+            this.Update_QuestionDescription.BackColor = System.Drawing.Color.AliceBlue;
+            this.Update_QuestionDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Update_QuestionDescription.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.Update_QuestionDescription.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Update_QuestionDescription.Location = new System.Drawing.Point(70, 168);
+            this.Update_QuestionDescription.Multiline = true;
+            this.Update_QuestionDescription.Name = "Update_QuestionDescription";
+            this.Update_QuestionDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Update_QuestionDescription.Size = new System.Drawing.Size(743, 23);
+            this.Update_QuestionDescription.TabIndex = 11;
+            this.Update_QuestionDescription.Text = "Calculate A + B\r\nzxz\r\nczcz";
             // 
             // Update_InputDescription
             // 
@@ -350,7 +350,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(901, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Update_ConfirmBtn);
             this.Controls.Add(this.label12);
@@ -365,7 +365,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Update_InputDescription);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.Update_ProblemDescription);
+            this.Controls.Add(this.Update_QuestionDescription);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Update_TotalPassNum);
@@ -396,7 +396,7 @@
         private System.Windows.Forms.TextBox Update_TotalSubmitNum;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox Update_ProblemDescription;
+        private System.Windows.Forms.TextBox Update_QuestionDescription;
         private System.Windows.Forms.TextBox Update_InputDescription;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Update_OutputDescription;
