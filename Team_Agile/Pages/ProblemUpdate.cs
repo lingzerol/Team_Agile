@@ -19,8 +19,8 @@ namespace Team_Agile.Pages
         public ProblemUpdate()
         {
             InitializeComponent();
-            readProblem();
-            showProblem();
+            //readProblem();
+            //showProblem();
 
 
         }
@@ -84,8 +84,8 @@ namespace Team_Agile.Pages
         {
             DialogResult dialogResult=MessageBox.Show("确认更新吗？", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (dialogResult == DialogResult.Yes)
-                writeProblem();
+            if (dialogResult == DialogResult.Yes) ;
+            //writeProblem();
             else
                 return;
         }
