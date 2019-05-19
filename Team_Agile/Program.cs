@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Team_Agile.Pages;
 namespace Team_Agile
 {
     static class Program
@@ -16,7 +16,7 @@ namespace Team_Agile
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form());
+            Application.Run(new Questionbank());
         }
     }
 }

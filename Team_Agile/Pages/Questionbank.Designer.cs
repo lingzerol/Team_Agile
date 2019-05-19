@@ -41,6 +41,7 @@
             this.show_question.Size = new System.Drawing.Size(1155, 580);
             this.show_question.TabIndex = 0;
             this.show_question.UseCompatibleStateImageBehavior = false;
+            this.show_question.SelectedIndexChanged += new System.EventHandler(this.show_question_SelectedIndexChanged);
             // 
             // label1
             // 

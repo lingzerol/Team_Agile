@@ -54,5 +54,10 @@ namespace Team_Agile.Pages
             problemStructure.Show();
             this.Hide();
         }
+
+        private void show_question_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
