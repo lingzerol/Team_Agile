@@ -33,17 +33,19 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(32, 35);
+            this.panel1.Location = new System.Drawing.Point(36, 42);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 560);
+            this.panel1.Size = new System.Drawing.Size(968, 672);
             this.panel1.TabIndex = 0;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 631);
+            this.ClientSize = new System.Drawing.Size(1044, 757);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

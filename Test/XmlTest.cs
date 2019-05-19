@@ -22,7 +22,7 @@ namespace Test
             p.QuestionDescription = "testing";
             p.QuestionName = "test";
             xmlOperator.XMLSerialized(p);
-            Directory.Exists("Problem//Problem" + p.QuestionName + ".xml");
+            Assert.IsTrue(Directory.Exists("Problem//Problem" + p.QuestionName + ".xml"));
         }
 
         [TestMethod]

@@ -11,15 +11,12 @@ using Lib;
 
 namespace Team_Agile.Pages
 {
-   
     public partial class Questionbank : Form
     {
-        public Questionbank( )
+        public Questionbank()
         {
             InitializeComponent();
             TableLoad();
-
-            
         }
 
         private void TableLoad()
@@ -28,11 +25,9 @@ namespace Team_Agile.Pages
             this.show_question.View = View.Details;
             this.show_question.Scrollable = true;
 
-
-            this.show_question.Columns.Add("Pro.Status", 100, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Pro.Id", 100, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Pro.Name", 350, HorizontalAlignment.Center);
- 
+            this.show_question.Columns.Add("Pro.ID", 100, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Problem Title", 350, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Ratio(Accepted/Submissions)", 200, HorizontalAlignment.Center);
         }
 
         private void Questionbank_Load(object sender, EventArgs e)
@@ -40,22 +35,24 @@ namespace Team_Agile.Pages
 
         }
 
-        public void show(List<StructureOfProblem> problems)
-        {
-            for (int i = 0; i < problems.Count(); i++)
-            {
-                StructureOfProblem s = new StructureOfProblem();
-                ListViewItem temp = new ListViewItem();
-                temp.Text = problems[i].AcceptsRate;
-                temp.SubItems.Add(problems[i].ProblemID);
-                temp.SubItems.Add(problems[i].QuestionName);
-                this.show_question.Items.Add(temp);
-            }
-        }
-        
-        private void show_question_SelectedIndexChanged(object sender, EventArgs e)
+        //private void Test_Click(object sender, EventArgs e)
+        //{
+        //    ProblemStructure problemStructure = new ProblemStructure();
+        //    problemStructure.Show();
+        //    this.Hide();
+        //}
+
+        private void Test_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Confirm_Click(object sender, EventArgs e)
+        {
+            StructureOfQuestionbank.problemTitle = test.Text;
+            ProblemStructure problemStructure = new ProblemStructure();
+            problemStructure.Show();
+            this.Hide();
         }
     }
 }
