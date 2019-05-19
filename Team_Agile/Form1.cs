@@ -32,10 +32,10 @@ namespace Team_Agile
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            Pages.Questionbank q = new Pages.Questionbank();
-            q.TopLevel = false;
-            panel1.Controls.Add(q);
-            q.Show();
+           // Pages.Questionbank q = new Pages.Questionbank();
+           // q.TopLevel = false;
+           // panel1.Controls.Add(q);
+           // q.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

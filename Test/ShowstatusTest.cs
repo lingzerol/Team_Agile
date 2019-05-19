@@ -11,16 +11,16 @@ namespace Test
     public class ShowstatusTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void showStatusTest()
         {
-            Questionbank bank = new Questionbank();       
+                  
             List<StructureOfProblem> problems = new List<StructureOfProblem>();
             StructureOfProblem problem = new StructureOfProblem();
-            problem.AcceptsRate = "Accept" 
+            problem.AcceptsRate = "Accept";
             problem.ProblemID = "1";
             problem.QuestionName = "test";
             problems.Add(problem);
-            bank.show(problems);
+            Questionbank bank = new Questionbank(problems);
             //bank.Show();
 
             
@@ -28,7 +28,6 @@ namespace Test
             Assert.AreEqual(temp.SubItems[1].Text, "1");
             Assert.AreEqual(temp.SubItems[2].Text, "test");
             Assert.AreEqual(temp.Text,"Accept");
-
 
         }
     }

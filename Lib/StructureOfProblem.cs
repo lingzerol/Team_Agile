@@ -22,7 +22,9 @@ namespace Lib
         private String inputSample = "";
         private String outputSample = "";
         private String hint = "";
+        private String problemID = "";
 
+        public string ProblemID { get => problemID; set => problemID = value; }
         public string QuestionName { get => questionName; set => questionName = value; }
         public string TimeLimitIndex { get => timeLimitIndex; set => timeLimitIndex = value; }
         public string MemoryLimitIndex { get => memoryLimitIndex; set => memoryLimitIndex = value; }

@@ -15,22 +15,19 @@ namespace Test
     public class XmlTest
     {
         [TestMethod]
-        public void XmlwriteTest()
+        public void XmlOperatorTest()
         {
             XmlOperator xmlOperator = new XmlOperator();
             StructureOfProblem p = new StructureOfProblem();
             p.QuestionDescription = "testing";
             p.QuestionName = "test";
             xmlOperator.XMLSerialized(p);
-            Assert.IsTrue(Directory.Exists("Problem//Problem" + p.QuestionName + ".xml"));
+            // Assert.IsTrue(Directory.Exists("Problem//Problem" + p.QuestionName + ".xml"));
+
+            StructureOfProblem p1 = xmlOperator.readXML("test");
+            Assert.AreEqual("testing", p1.QuestionDescription);
         }
 
-        [TestMethod]
-        public void XmlreadTest()
-        {
-            XmlOperator xmlOperator = new XmlOperator();
-            StructureOfProblem p = xmlOperator.readXML("test");
-            Assert.AreEqual("testing", p.QuestionDescription);
-        }
+
     }
 }

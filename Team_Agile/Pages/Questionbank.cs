@@ -13,10 +13,11 @@ namespace Team_Agile.Pages
 {
     public partial class Questionbank : Form
     {
-        public Questionbank()
+        public Questionbank(List<StructureOfProblem> problems)
         {
             InitializeComponent();
             TableLoad();
+            showlist(problems);
         }
 
         private void TableLoad()
@@ -25,9 +26,20 @@ namespace Team_Agile.Pages
             this.show_question.View = View.Details;
             this.show_question.Scrollable = true;
 
-            this.show_question.Columns.Add("Pro.ID", 100, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Problem Title", 350, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Ratio(Accepted/Submissions)", 200, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Pro.Status", 250, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Pro.ID", 150, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Problem Title", 500, HorizontalAlignment.Center);
+        }
+        private void showlist(List<StructureOfProblem> problems)
+        {
+            for(int i = 0; i < problems.Count(); i++)
+            {
+                ListViewItem list = new ListViewItem();
+                list.Text = problems[i].AcceptsRate;
+                list.SubItems.Add(problems[i].ProblemID);
+                list.SubItems.Add(problems[i].QuestionName);
+                this.show_question.Items.Add(list);
+            }
         }
 
         private void Questionbank_Load(object sender, EventArgs e)
@@ -35,12 +47,6 @@ namespace Team_Agile.Pages
 
         }
 
-        //private void Test_Click(object sender, EventArgs e)
-        //{
-        //    ProblemStructure problemStructure = new ProblemStructure();
-        //    problemStructure.Show();
-        //    this.Hide();
-        //}
 
         private void Test_TextChanged(object sender, EventArgs e)
         {
@@ -53,6 +59,11 @@ namespace Team_Agile.Pages
             ProblemStructure problemStructure = new ProblemStructure();
             problemStructure.Show();
             this.Hide();
+        }
+
+        private void show_question_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

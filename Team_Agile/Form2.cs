@@ -15,10 +15,10 @@ namespace Team_Agile
         public Form2()
         {
             InitializeComponent();
-                Pages.Questionbank q = new Pages.Questionbank();
-                q.TopLevel = false;
-                panel1.Controls.Add(q);
-                q.Show();
+             //   Pages.Questionbank q = new Pages.Questionbank();
+             //   q.TopLevel = false;
+             //   panel1.Controls.Add(q);
+              //  q.Show();
         }
 
         private void Form2_Load(object sender, EventArgs e)
