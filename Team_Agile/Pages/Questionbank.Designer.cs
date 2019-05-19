@@ -34,6 +34,7 @@ namespace Team_Agile.Pages
             this.label1 = new System.Windows.Forms.Label();
             this.test = new System.Windows.Forms.TextBox();
             this.confirm = new System.Windows.Forms.Button();
+            this.AddProblem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // show_question
@@ -77,11 +78,25 @@ namespace Team_Agile.Pages
             this.confirm.UseVisualStyleBackColor = true;
             this.confirm.Click += new System.EventHandler(this.Confirm_Click);
             // 
+            // AddProblem
+            // 
+            this.AddProblem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AddProblem.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.AddProblem.Location = new System.Drawing.Point(896, 29);
+            this.AddProblem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddProblem.Name = "AddProblem";
+            this.AddProblem.Size = new System.Drawing.Size(78, 25);
+            this.AddProblem.TabIndex = 4;
+            this.AddProblem.Text = "添加";
+            this.AddProblem.UseVisualStyleBackColor = true;
+            this.AddProblem.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Questionbank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
+            this.Controls.Add(this.AddProblem);
             this.Controls.Add(this.confirm);
             this.Controls.Add(this.test);
             this.Controls.Add(this.label1);
@@ -100,6 +115,7 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox test;
         private System.Windows.Forms.Button confirm;
+        private Button AddProblem;
 
         public ListView Show_question { get => show_question; set => show_question = value; }
 
