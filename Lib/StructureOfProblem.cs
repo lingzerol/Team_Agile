@@ -21,7 +21,6 @@ namespace Lib
         private string inputSample;
         private string outputSample;
         private string hint;
-        private int problemID;
 
         public string QuestionName { get => questionName; set => questionName = value; }
         public string TimeLimitIndex { get => timeLimitIndex; set => timeLimitIndex = value; }
@@ -35,6 +34,5 @@ namespace Lib
         public string InputSample { get => inputSample; set => inputSample = value; }
         public string OutputSample { get => outputSample; set => outputSample = value; }
         public string Hint { get => hint; set => hint = value; }
-        public int ProblemID { get => problemID; set => problemID = value; }
     }
 }

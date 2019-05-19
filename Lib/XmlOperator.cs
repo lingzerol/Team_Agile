@@ -24,31 +24,32 @@ namespace Lib
             }
         }
 
-        public void XMLSerialized(string path, SerializableDictionary<int, StructureOfProblem> problem)
+        public void XMLSerialized(StructureOfProblem problem)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(SerializableDictionary<int,StructureOfProblem>));
+            XmlSerializer xs = new XmlSerializer(typeof(StructureOfProblem));
             //默认D盘为根目录 
+            Console.WriteLine(problem.QuestionName);
             checkDir("Problem//");
-            Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Read);
+            Stream stream = new FileStream("Problem//Problem" + problem.QuestionName + ".xml", FileMode.Create, FileAccess.Write, FileShare.Read);
             xs.Serialize(stream, problem);
             stream.Close();
         }
-        public SerializableDictionary<int, StructureOfProblem> readXML(String path)
+        public StructureOfProblem readXML(String name)
         {
-            SerializableDictionary<int, StructureOfProblem> item = new SerializableDictionary<int, StructureOfProblem>();
+            StructureOfProblem problem = new StructureOfProblem();
 
             try
             {
-                XmlSerializer xs = new XmlSerializer(typeof(SerializableDictionary<int, StructureOfProblem>));
-                Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
-                item = (SerializableDictionary<int, StructureOfProblem>)xs.Deserialize(stream);
+                XmlSerializer xs = new XmlSerializer(typeof(StructureOfProblem));
+                Stream stream = new FileStream("Problem//Problem" + name + ".xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+                problem = xs.Deserialize(stream) as StructureOfProblem;
             }
             catch (Exception e)
             {
                 Console.Write("打开失败");
             }
 
-            return item;
+            return problem;
         }
     }
 }
