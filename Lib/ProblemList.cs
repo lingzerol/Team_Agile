@@ -70,7 +70,7 @@ namespace Lib
         private const string path = "Problem//Problem.xml";
 
         public static void Init() {
-            if (Directory.Exists("Problem//Problem.xml"))
+            if (Directory.Exists(path))
             {
                 XmlOperator xmlopertor = new XmlOperator();
                 problem = xmlopertor.readXML(path);
