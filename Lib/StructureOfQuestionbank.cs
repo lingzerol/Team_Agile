@@ -13,7 +13,16 @@ namespace Lib
         private int accepted;
         private int submissions;
         private float ratio;
+        public StructureOfQuestionbank() {
 
+        }
+        public StructureOfQuestionbank(StructureOfProblem problem) {
+            ProblemID = problem.ProblemID;
+            ProblemTitle = problem.QuestionName;
+            accepted = 0;
+            submissions = 0;
+            ratio = 0;
+        }
         public int ProblemID { get => problemID; set => problemID = value; }
         public string ProblemTitle { get => problemTitle; set => problemTitle = value; }
         public int Accepted { get => accepted; set => accepted = value; }
