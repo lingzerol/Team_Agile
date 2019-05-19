@@ -27,8 +27,8 @@ namespace Lib
         public string QuestionName { get => questionName; set => questionName = value; }
         public string TimeLimitIndex { get => timeLimitIndex; set => timeLimitIndex = value; }
         public string MemoryLimitIndex { get => memoryLimitIndex; set => memoryLimitIndex = value; }
-        public int TotalSubmits { get => totalSubmits; set => totalSubmits = value; }
-        public int TotalAccepts { get => totalAccepts; set => totalAccepts = value; }
+        public string TotalSubmits { get => totalSubmits; set => totalSubmits = value; }
+        public string TotalAccepts { get => totalAccepts; set => totalAccepts = value; }
         public string AcceptsRate { get => acceptsRate; set => acceptsRate = value; }
         public string QuestionDescription { get => questionDescription; set => questionDescription = value; }
         public string InputDescription { get => inputDescription; set => inputDescription = value; }

@@ -22,14 +22,14 @@ namespace Team_Agile.Pages
             this.Location = new System.Drawing.Point(500, 500);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             InitializeComponent();
-            if(!File.Exists("Problem//Problem" + StructureOfQuestionbank.problemTitle + ".xml"))
-                {
-                    MessageBox.Show("没有加载到题目信息，请导入题目！");
-                }
+            if (!File.Exists("Problem//Problem" + StructureOfQuestionbank.problemTitle + ".xml"))
+            {
+                MessageBox.Show("没有加载到题目信息，请导入题目！");
+            }
             StructureOfProblem structureOfProblem = null;
             try
             {
-                structureOfProblem = xmlOperator.readXML( StructureOfQuestionbank.problemTitle);
+                structureOfProblem = xmlOperator.readXML(StructureOfQuestionbank.problemTitle);
                 this.questionName.AppendText(structureOfProblem.QuestionName.Length != 0 ? structureOfProblem.QuestionName : "");
                 this.timeLimitIndex.AppendText(structureOfProblem.TimeLimitIndex.Length != 0 ? structureOfProblem.TimeLimitIndex : "");
                 this.memoryLimitIndex.AppendText(structureOfProblem.MemoryLimitIndex.Length != 0 ? structureOfProblem.MemoryLimitIndex : "");
@@ -74,7 +74,7 @@ namespace Team_Agile.Pages
             structureOfProblem.AcceptsRate = this.acceptsRate.Text;
             structureOfProblem.QuestionDescription = this.questionDescription.Text;
             structureOfProblem.InputDescription = this.inputDescription.Text;
-            structureOfProblem.OutputDescription = this.outputDescription.Text;
+            structureOfProblem.OutputDescription = this.outputDescription.Text; 
             structureOfProblem.InputSample = this.inputSample.Text;
             structureOfProblem.OutputSample = this.outputSample.Text;
             structureOfProblem.Hint = this.hint.Text;
