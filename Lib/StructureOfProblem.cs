@@ -24,6 +24,23 @@ namespace Lib
         private string hint;
         private int problemID;
 
+        public StructureOfProblem()
+        {
+            questionName="";
+            timeLimitIndex="";
+            memoryLimitIndex = "";
+            totalSubmits = "";
+            totalAccepts = "";
+            acceptsRate = "";
+            questionDescription = "";
+            inputDescription = "";
+            outputDescription = "";
+            inputSample = "";
+            outputSample = "";
+            hint = "";
+            problemID=-1;
+    }
+
         public string QuestionName { get => questionName; set => questionName = value; }
         public string TimeLimitIndex { get => timeLimitIndex; set => timeLimitIndex = value; }
         public string MemoryLimitIndex { get => memoryLimitIndex; set => memoryLimitIndex = value; }

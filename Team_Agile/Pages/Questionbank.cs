@@ -49,10 +49,14 @@ namespace Team_Agile.Pages
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            StructureOfQuestionbank.problemTitle = test.Text;
-            ProblemStructure problemStructure = new ProblemStructure();
-            problemStructure.Show();
-            this.Hide();
+            StructureOfProblem problem = new StructureOfProblem();
+            problem.ProblemID = 1;
+            ProblemList.Add(problem);
+            ((Form1)(this.ParentForm)).TurnForm(new ProblemStructure(1));
+            //StructureOfQuestionbank.problemTitle = test.Text;
+            //ProblemStructure problemStructure = new ProblemStructure();
+            //problemStructure.Show();
+            //this.Hide();
         }
 
         private void show_question_SelectedIndexChanged(object sender, EventArgs e)

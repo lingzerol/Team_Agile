@@ -30,7 +30,11 @@ namespace Team_Agile.Pages
             string result = php.run();
             if(result=="Hello World")
             {
-
+                MessageBox.Show("Accepted!");
+            }
+            else
+            {
+                MessageBox.Show("Wrong answer");
             }
         }
 

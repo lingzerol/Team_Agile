@@ -18,7 +18,7 @@ namespace Team_Agile
             ProblemList.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ShowProblem());
+            Application.Run(new Form1());
         }
     }
 }
