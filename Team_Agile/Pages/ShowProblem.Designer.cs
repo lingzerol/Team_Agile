@@ -136,6 +136,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ShowProblem";
             this.Text = "ShowProblem";
+            this.Load += new System.EventHandler(this.ShowProblem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

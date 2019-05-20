@@ -82,6 +82,14 @@ namespace Lib
         public static StructureOfProblem GetProblem(int ID) {
             return problem[ID];
         }
+        public static SerializableDictionary<int, StructureOfProblem> GetAll()
+        {
+            return problem;
+        }
+        public static void Delete(int ID)
+        {
+            problem.Remove(ID);
+        }
         public static void Save() {
             XmlOperator xmlopertor = new XmlOperator();
             xmlopertor.XMLSerialized(path, problem);
