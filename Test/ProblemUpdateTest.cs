@@ -25,7 +25,8 @@ namespace Test
             Assert.AreEqual(problemUpdate.InputSamples, problem.InputSample);
             Assert.AreEqual(problemUpdate.OutputSamples, problem.OutputSample);
             Assert.AreEqual(problemUpdate.QuestionDescription, problem.QuestionDescription);
-
+            
+            //修改题目名字
             string newQuestionName = "贪心";
             problemUpdate.QuestionName = newQuestionName;
             Assert.AreEqual(problemUpdate.QuestionName, newQuestionName);
