@@ -33,8 +33,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SourceCode = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Submit = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -89,27 +89,27 @@
             this.SourceCode.TabIndex = 4;
             this.SourceCode.Text = "echo \"Hello world\";";
             // 
-            // button1
+            // Submit
             // 
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(463, 638);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 39);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Submit.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Submit.Location = new System.Drawing.Point(463, 638);
+            this.Submit.Name = "Submit";
+            this.Submit.Size = new System.Drawing.Size(112, 39);
+            this.Submit.TabIndex = 5;
+            this.Submit.Text = "Submit";
+            this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Reset
             // 
-            this.button2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(623, 638);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 39);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Reset.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Reset.Location = new System.Drawing.Point(623, 638);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(102, 39);
+            this.Reset.TabIndex = 6;
+            this.Reset.Text = "Reset";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -127,8 +127,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Reset);
+            this.Controls.Add(this.Submit);
             this.Controls.Add(this.SourceCode);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -148,9 +148,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox SourceCode;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox SourceCode;
+        public System.Windows.Forms.Button Submit;
+        public System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Label label3;
     }
 }
