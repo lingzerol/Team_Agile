@@ -16,9 +16,10 @@ namespace Team_Agile.Pages
         public StructureOfProblem problem;
         public int problemID;
 
-        public ProblemUpdate()
+        public ProblemUpdate(int _problemID)
         {
             InitializeComponent();
+            problemID = _problemID;
             readProblem();
             showProblem();
         }
@@ -39,7 +40,7 @@ namespace Team_Agile.Pages
             this.Update_OutputDescription.Text = problem.OutputDescription;
             this.Update_OutputSamples.Text = problem.OutputSample;
             this.Update_QuestionDescription.Text = problem.QuestionDescription;
-            this.Update_ProblemName.Text = problem.QuestionName;
+            this.Update_QuestionName.Text = problem.QuestionName;
         }
 
         //将修改后的内容详情写入
@@ -53,7 +54,7 @@ namespace Team_Agile.Pages
             problem.OutputDescription = this.Update_OutputDescription.Text;
             problem.OutputSample = this.Update_OutputSamples.Text;
             problem.QuestionDescription = this.Update_QuestionDescription.Text;
-            problem.QuestionName = this.Update_ProblemName.Text;
+            problem.QuestionName = this.Update_QuestionName.Text;
             //更新问题修改
             ProblemList.Add(problem);
         }
@@ -66,6 +67,27 @@ namespace Team_Agile.Pages
                 writeProblem();
             else
                 return;
+        }
+
+        public string QuestionName
+        {
+            set { Update_QuestionName.Text = value; }
+            get { return Update_QuestionName.Text; }
+        }
+
+        public string InputSamples {
+            set { Update_InputSamples.Text = value; }
+            get { return Update_InputSamples.Text; }
+        }
+
+        public string OutputSamples {
+            set { Update_OutputSamples.Text = value; }
+            get { return Update_OutputSamples.Text; }
+        }
+
+        public string QuestionDescription {
+            set {Update_QuestionDescription.Text = value; }
+            get { return Update_QuestionDescription.Text; }
         }
     }
 }
