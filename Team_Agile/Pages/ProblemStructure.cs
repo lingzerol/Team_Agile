@@ -16,9 +16,11 @@ namespace Team_Agile.Pages
     public partial class ProblemStructure : Form
     {
         private XmlOperator xmlOperator = new XmlOperator();
+        private int ID;
         //private StructureOfQuestionbank structureOfQuestionbank = new StructureOfQuestionbank();
         public ProblemStructure(int ID)
         {
+            this.ID = ID;
             this.Location = new System.Drawing.Point(500, 500);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             InitializeComponent();
@@ -54,14 +56,6 @@ namespace Team_Agile.Pages
         private void BtnSave_Click(object sender, EventArgs e)
         {
             StructureOfProblem structureOfProblem = new StructureOfProblem();
-            try
-            {
-
-            }
-            catch
-            {
-
-            }
             structureOfProblem.QuestionName = this.questionName.Text;
             structureOfProblem.TimeLimitIndex = this.timeLimitIndex.Text;
             structureOfProblem.MemoryLimitIndex = this.memoryLimitIndex.Text;
@@ -74,11 +68,19 @@ namespace Team_Agile.Pages
             structureOfProblem.InputSample = this.inputSample.Text;
             structureOfProblem.OutputSample = this.outputSample.Text;
             structureOfProblem.Hint = this.hint.Text;
+            structureOfProblem.ProblemID = ID;
+            ProblemList.Add(structureOfProblem);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ((Form1)(this.ParentForm)).TurnForm(new SubmitProblem());
+        }
+
+        private void BtnReturn_Click(object sender, EventArgs e)
+        {
+            ((Form1)this.ParentForm).TurnForm(new Questionbank());
+            this.Close();
         }
     }
 }

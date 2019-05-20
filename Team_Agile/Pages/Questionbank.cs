@@ -83,6 +83,7 @@ namespace Team_Agile.Pages
                 {
                     Checked = false;
                     ProblemList.Delete(int.Parse(this.show_question.Items[i].SubItems[1].Text));
+                    ProblemList.Save();
 ;                }
             }
             //MessageBox.Show(this.show_question.Items[2].SubItems[1].Text);
@@ -99,7 +100,10 @@ namespace Team_Agile.Pages
         //添加按钮
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("添加");
+            ((Form1)(this.ParentForm)).TurnForm(new AddProblem());
+            //AddProblem addProblem = new AddProblem();
+            //addProblem.Show();
+            //this.Close();
         }
 
 

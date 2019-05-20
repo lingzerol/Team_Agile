@@ -42,6 +42,7 @@ namespace Lib
                 XmlSerializer xs = new XmlSerializer(typeof(SerializableDictionary<int, StructureOfProblem>));
                 Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
                 item = (SerializableDictionary<int, StructureOfProblem>)xs.Deserialize(stream);
+                stream.Close();
             }
             catch (Exception e)
             {

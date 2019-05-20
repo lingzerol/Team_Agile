@@ -37,6 +37,7 @@
             this.Pannel.Name = "Pannel";
             this.Pannel.Size = new System.Drawing.Size(1208, 689);
             this.Pannel.TabIndex = 0;
+            this.Pannel.Paint += new System.Windows.Forms.PaintEventHandler(this.Pannel_Paint);
             // 
             // Form1
             // 

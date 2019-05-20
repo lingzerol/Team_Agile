@@ -54,6 +54,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.questionName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.BtnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -349,11 +350,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // BtnReturn
+            // 
+            this.BtnReturn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnReturn.Location = new System.Drawing.Point(59, 35);
+            this.BtnReturn.Name = "BtnReturn";
+            this.BtnReturn.Size = new System.Drawing.Size(71, 42);
+            this.BtnReturn.TabIndex = 32;
+            this.BtnReturn.Text = "返回";
+            this.BtnReturn.UseVisualStyleBackColor = true;
+            this.BtnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
             // ProblemStructure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
+            this.Controls.Add(this.BtnReturn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.questionName);
             this.Controls.Add(this.btnSave);
@@ -418,5 +431,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox questionName;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnReturn;
     }
 }

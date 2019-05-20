@@ -67,17 +67,22 @@ namespace Lib
     public static class ProblemList
     {
         private static SerializableDictionary<int,StructureOfProblem> problem = new SerializableDictionary<int, StructureOfProblem>();
-        private const string path = "Problem//Problem.xml";
-
+        private const string path = "./Problem/Problem.xml";
+        static ProblemList() {
+            Init();
+        }
         public static void Init() {
-            if (Directory.Exists(path))
+            if (File.Exists(path))
             {
                 XmlOperator xmlopertor = new XmlOperator();
                 problem = xmlopertor.readXML(path);
             }
         }
         public static void Add(StructureOfProblem newProblem) {
-            problem.Add(newProblem.ProblemID, newProblem);
+            if (!problem.ContainsKey(newProblem.ProblemID))
+                problem.Add(newProblem.ProblemID, newProblem);
+            else problem[newProblem.ProblemID] = newProblem;
+            Save();
         }
         public static StructureOfProblem GetProblem(int ID) {
             return problem[ID];
@@ -89,6 +94,7 @@ namespace Lib
         public static void Delete(int ID)
         {
             problem.Remove(ID);
+            Save();
         }
         public static void Save() {
             XmlOperator xmlopertor = new XmlOperator();

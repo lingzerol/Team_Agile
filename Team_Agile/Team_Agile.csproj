@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddProblem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AddProblem.Designer.cs">
+      <DependentUpon>AddProblem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Questionbank.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AddProblem.resx">
+      <DependentUpon>AddProblem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProblemStructure.resx">
       <DependentUpon>ProblemStructure.cs</DependentUpon>

@@ -32,5 +32,10 @@ namespace Team_Agile
             this.Pannel.Controls.Add(form);
             form.Show();
         }
+
+        private void Pannel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
