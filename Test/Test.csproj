@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpGetTest.cs" />
+    <Compile Include="ProblemUpdateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowstatusTest.cs" />
     <Compile Include="SubmitTest.cs" />
