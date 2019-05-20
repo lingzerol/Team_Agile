@@ -13,10 +13,12 @@ namespace Team_Agile.Pages
 {
     public partial class Questionbank : Form
     {
+        private Button btn = new Button();
         public Questionbank()
         {
             InitializeComponent();
             TableLoad();
+            showlist();
         }
 
         private void TableLoad()
@@ -25,43 +27,102 @@ namespace Team_Agile.Pages
             this.show_question.View = View.Details;
             this.show_question.Scrollable = true;
 
-            this.show_question.Columns.Add("Pro.ID", 100, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Problem Title", 350, HorizontalAlignment.Center);
-            this.show_question.Columns.Add("Ratio(Accepted/Submissions)", 200, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Pro.Status", 230, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Pro.ID", 170, HorizontalAlignment.Center);
+            this.show_question.Columns.Add("Problem Title", 360, HorizontalAlignment.Center);
+            //this.show_question.Columns.Add("", 130, HorizontalAlignment.Center);
         }
-
-        private void Questionbank_Load(object sender, EventArgs e)
+        private void showlist()
         {
-
-        }
-
-        //private void Test_Click(object sender, EventArgs e)
-        //{
-        //    ProblemStructure problemStructure = new ProblemStructure();
-        //    problemStructure.Show();
-        //    this.Hide();
-        //}
-
-        private void Test_TextChanged(object sender, EventArgs e)
-        {
-
+            SerializableDictionary<int, StructureOfProblem> problems = ProblemList.GetAll();
+            foreach (int key in problems.Keys)
+            {
+                ListViewItem list = new ListViewItem();
+                list.Text = ProblemList.GetProblem(key).AcceptsRate;
+                list.SubItems.Add(ProblemList.GetProblem(key).ProblemID.ToString());
+                list.SubItems.Add(ProblemList.GetProblem(key).QuestionName);
+                this.show_question.Items.Add(list);
+            }
         }
 
         private void Confirm_Click(object sender, EventArgs e)
         {
             StructureOfProblem problem = new StructureOfProblem();
-            problem.ProblemID = 1;
-            ProblemList.Add(problem);
-            ((Form1)(this.ParentForm)).TurnForm(new ProblemStructure(1));
+            //problem.ProblemID = int.Parse(test.Text);
+            //ProblemList.Add(problem);
+            Boolean isNumber = true;
+            foreach(char a in test.Text)
+            {
+                if (!Char.IsDigit(a))
+                {
+                    isNumber = false;
+                    break;
+                }
+            }
+            if (isNumber)
+            ((Form1)(this.ParentForm)).TurnForm(new ProblemStructure(int.Parse(test.Text)));
+            else
+            {
+                MessageBox.Show("请输入题目ID号");
+            }
             //StructureOfQuestionbank.problemTitle = test.Text;
             //ProblemStructure problemStructure = new ProblemStructure();
             //problemStructure.Show();
             //this.Hide();
         }
 
-        private void show_question_SelectedIndexChanged(object sender, EventArgs e)
-        {
+    
 
+
+        private void buttondelete_Click(object sender, EventArgs e)
+        {
+            Boolean Checked =true;
+            for(int i=0;i<this.show_question.Items.Count;i++)
+            {
+                if (this.show_question.Items[i].Checked == true)
+                {
+                    Checked = false;
+                    ProblemList.Delete(int.Parse(this.show_question.Items[i].SubItems[1].Text));
+;                }
+            }
+            //MessageBox.Show(this.show_question.Items[2].SubItems[1].Text);
+            if (Checked)
+                MessageBox.Show("没有选择要删除的题目");
+            else
+            {
+                this.show_question.Items.Clear();
+                showlist();
+            }
+                
+        }
+
+        //添加按钮
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("添加");
+        }
+
+
+     
+
+
+
+        private void show_question_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+           //this.show_question.Items[e.Index].Checked = !this.show_question.Items[e.Index].Checked;
+            //MessageBox.Show("num:"+ this.show_question.Items[e.Index].Checked);
+        }
+
+        private void test_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+        //点击行跳转
+        private void show_question_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if(this.show_question.SelectedItems.Count==1)
+            //MessageBox.Show(e.Item.SubItems[1].Text);
+            ((Form1)(this.ParentForm)).TurnForm(new ProblemStructure(int.Parse(e.Item.SubItems[1].Text)));
         }
     }
 }

@@ -42,5 +42,10 @@ namespace Team_Agile.Pages
         {
             SourceCode.Text = "";
         }
+
+        private void ShowProblem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

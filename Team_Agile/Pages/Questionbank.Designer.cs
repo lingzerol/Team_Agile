@@ -1,4 +1,6 @@
-﻿namespace Team_Agile.Pages
+﻿using System.Windows.Forms;
+
+namespace Team_Agile.Pages
 {
     partial class Questionbank
     {
@@ -32,16 +34,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.test = new System.Windows.Forms.TextBox();
             this.confirm = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // show_question
             // 
+            this.show_question.FullRowSelect = true;
+            this.show_question.CheckBoxes = true;
             this.show_question.Location = new System.Drawing.Point(12, 67);
             this.show_question.Name = "show_question";
             this.show_question.Size = new System.Drawing.Size(1155, 580);
             this.show_question.TabIndex = 0;
             this.show_question.UseCompatibleStateImageBehavior = false;
-            this.show_question.SelectedIndexChanged += new System.EventHandler(this.show_question_SelectedIndexChanged);
+            this.show_question.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.show_question_ItemCheck);
+            this.show_question.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.show_question_ItemSelectionChanged);
             // 
             // label1
             // 
@@ -60,7 +67,7 @@
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(89, 25);
             this.test.TabIndex = 2;
-            this.test.TextChanged += new System.EventHandler(this.Test_TextChanged);
+            this.test.TextChanged += new System.EventHandler(this.test_TextChanged);
             // 
             // confirm
             // 
@@ -75,18 +82,39 @@
             this.confirm.UseVisualStyleBackColor = true;
             this.confirm.Click += new System.EventHandler(this.Confirm_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "添加";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(900, 29);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 25);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "删除";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttondelete_Click);
+            // 
             // Questionbank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.confirm);
             this.Controls.Add(this.test);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.show_question);
             this.Name = "Questionbank";
             this.Text = "Questionbank";
-            this.Load += new System.EventHandler(this.Questionbank_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +126,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox test;
         private System.Windows.Forms.Button confirm;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+
+        public ListView Show_question { get => show_question; set => show_question = value; }
     }
 }

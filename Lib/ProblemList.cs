@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,14 +70,25 @@ namespace Lib
         private const string path = "Problem//Problem.xml";
 
         public static void Init() {
-            XmlOperator xmlopertor = new XmlOperator();
-            problem=xmlopertor.readXML(path);
+            if (Directory.Exists(path))
+            {
+                XmlOperator xmlopertor = new XmlOperator();
+                problem = xmlopertor.readXML(path);
+            }
         }
         public static void Add(StructureOfProblem newProblem) {
             problem.Add(newProblem.ProblemID, newProblem);
         }
         public static StructureOfProblem GetProblem(int ID) {
             return problem[ID];
+        }
+        public static SerializableDictionary<int, StructureOfProblem> GetAll()
+        {
+            return problem;
+        }
+        public static void Delete(int ID)
+        {
+            problem.Remove(ID);
         }
         public static void Save() {
             XmlOperator xmlopertor = new XmlOperator();
