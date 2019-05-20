@@ -11,9 +11,9 @@ using Lib;
 
 namespace Team_Agile.Pages
 {
-    public partial class ShowProblem : Form
+    public partial class SubmitProblem : Form
     {
-        public ShowProblem()
+        public SubmitProblem()
         {
             InitializeComponent();
         }

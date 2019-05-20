@@ -1,6 +1,6 @@
 ﻿namespace Team_Agile.Pages
 {
-    partial class ShowProblem
+    partial class SubmitProblem
     {
         /// <summary>
         /// Required designer variable.
@@ -96,7 +96,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 39);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Submitt";
+            this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -121,7 +121,7 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Source Code";
             // 
-            // ShowProblem
+            // SubmitProblem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ShowProblem";
+            this.Name = "SubmitProblem";
             this.Text = "ShowProblem";
             this.ResumeLayout(false);
             this.PerformLayout();

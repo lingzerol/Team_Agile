@@ -75,5 +75,10 @@ namespace Team_Agile.Pages
             structureOfProblem.OutputSample = this.outputSample.Text;
             structureOfProblem.Hint = this.hint.Text;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ((Form1)(this.ParentForm)).TurnForm(new SubmitProblem());
+        }
     }
 }

@@ -64,11 +64,11 @@
     <Compile Include="Pages\ProblemStructure.Designer.cs">
       <DependentUpon>ProblemStructure.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ShowProblem.cs">
+    <Compile Include="Pages\SubmitProblem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\ShowProblem.Designer.cs">
-      <DependentUpon>ShowProblem.cs</DependentUpon>
+    <Compile Include="Pages\SubmitProblem.Designer.cs">
+      <DependentUpon>SubmitProblem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="Pages\Questionbank.resx">
       <DependentUpon>Questionbank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ShowProblem.resx">
-      <DependentUpon>ShowProblem.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\SubmitProblem.resx">
+      <DependentUpon>SubmitProblem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
