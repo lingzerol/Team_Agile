@@ -36,6 +36,7 @@
             this.Submit = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -121,11 +122,23 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Source Code";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(38, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 41);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "返回";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // SubmitProblem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.Submit);
@@ -152,5 +165,6 @@
         public System.Windows.Forms.Button Submit;
         public System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }

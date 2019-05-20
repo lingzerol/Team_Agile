@@ -47,5 +47,11 @@ namespace Team_Agile.Pages
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ((Form1)this.ParentForm).TurnForm(new ProblemStructure(1));
+            this.Close();
+        }
     }
 }
