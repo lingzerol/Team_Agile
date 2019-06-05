@@ -21,9 +21,10 @@ namespace Team_Agile.Pages
         public SubmitProblem(StructureOfProblem p)
         {
             InitializeComponent();
+            structureOfProblem = p;
             textBox1.Text = structureOfProblem.ProblemID.ToString();
             textBox2.Text = structureOfProblem.QuestionName;
-            structureOfProblem = p;
+            
         }
 
 
