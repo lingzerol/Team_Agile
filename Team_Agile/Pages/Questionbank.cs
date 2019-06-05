@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using Lib;
 
 namespace Team_Agile.Pages
@@ -129,6 +130,24 @@ namespace Team_Agile.Pages
             if(this.show_question.SelectedItems.Count==1)
             //MessageBox.Show(e.Item.SubItems[1].Text);
             ((Form1)(this.ParentForm)).TurnForm(new ProblemStructure(int.Parse(e.Item.SubItems[1].Text)));
+        }
+
+
+        private void export_status_Click_1(object sender, EventArgs e)
+        {
+            SerializableDictionary<int, StructureOfProblem> problems = ProblemList.GetAll();
+            SerializableDictionary<int, StructureOfProblem> problemlist = new SerializableDictionary<int, StructureOfProblem>();
+            XmlOperator xmlOperator = new XmlOperator();
+            foreach (int key in problems.Keys)
+            {
+                StructureOfProblem p = new StructureOfProblem();
+                p.AcceptsRate = ProblemList.GetProblem(key).AcceptsRate;
+                p.QuestionName = ProblemList.GetProblem(key).QuestionName;
+                p.ProblemID = ProblemList.GetProblem(key).ProblemID;
+                problemlist.Add(p.ProblemID, p);                                  
+            }
+            xmlOperator.XMLSerialized("Problem//ProblemStatus.xml", problemlist);
+            //MessageBox.Show("导出成功");
         }
     }
 }
