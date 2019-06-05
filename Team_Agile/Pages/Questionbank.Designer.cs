@@ -40,8 +40,8 @@ namespace Team_Agile.Pages
             // 
             // show_question
             // 
-            this.show_question.FullRowSelect = true;
             this.show_question.CheckBoxes = true;
+            this.show_question.FullRowSelect = true;
             this.show_question.Location = new System.Drawing.Point(12, 67);
             this.show_question.Name = "show_question";
             this.show_question.Size = new System.Drawing.Size(1155, 580);
@@ -107,12 +107,12 @@ namespace Team_Agile.Pages
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
+            this.Controls.Add(this.show_question);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.confirm);
             this.Controls.Add(this.test);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.show_question);
             this.Name = "Questionbank";
             this.Text = "Questionbank";
             this.ResumeLayout(false);

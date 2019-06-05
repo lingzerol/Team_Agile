@@ -13,22 +13,26 @@ namespace Team_Agile.Pages
 {
     public partial class SubmitProblem : Form
     {
+        public StructureOfProblem structureOfProblem;
         public SubmitProblem()
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public SubmitProblem(StructureOfProblem p)
         {
-
+            InitializeComponent();
+            textBox1.Text = structureOfProblem.ProblemID.ToString();
+            textBox2.Text = structureOfProblem.QuestionName;
+            structureOfProblem = p;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             PHPRunner php = new PHPRunner();
             php.Code = "<?php\n" + this.SourceCode.Text;
             string result = php.run();
-            if(result=="Hello World")
+            if(result==structureOfProblem.OutputSample)
             {
                 MessageBox.Show("Accepted!");
             }
@@ -50,8 +54,9 @@ namespace Team_Agile.Pages
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ((Form1)this.ParentForm).TurnForm(new ProblemStructure(1));
+            ((Form1)this.ParentForm).TurnForm(new ProblemStructure(structureOfProblem.ProblemID));
             this.Close();
         }
+
     }
 }

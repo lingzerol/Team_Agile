@@ -52,11 +52,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Pages\AddProblem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\AddProblem.Designer.cs">
       <DependentUpon>AddProblem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProblemUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ProblemUpdate.Designer.cs">
+      <DependentUpon>ProblemUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Questionbank.cs">
       <SubType>Form</SubType>
@@ -81,11 +96,23 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\Team_Agile.Form1.resources" />
+    <EmbeddedResource Include="obj\Debug\Team_Agile.Pages.AddProblem.resources" />
+    <EmbeddedResource Include="obj\Debug\Team_Agile.Pages.ProblemStructure.resources" />
+    <EmbeddedResource Include="obj\Debug\Team_Agile.Pages.Questionbank.resources" />
+    <EmbeddedResource Include="obj\Debug\Team_Agile.Pages.SubmitProblem.resources" />
+    <EmbeddedResource Include="obj\Debug\Team_Agile.Properties.Resources.resources" />
     <EmbeddedResource Include="Pages\AddProblem.resx">
       <DependentUpon>AddProblem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProblemStructure.resx">
       <DependentUpon>ProblemStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProblemUpdate.resx">
+      <DependentUpon>ProblemUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Questionbank.resx">
       <DependentUpon>Questionbank.cs</DependentUpon>
@@ -102,6 +129,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\Team_Agile.exe.config" />
+    <None Include="obj\Debug\Team_Agile.csproj.CopyComplete" />
+    <None Include="obj\Debug\Team_Agile.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Team_Agile.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\Team_Agile.csprojAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,6 +152,20 @@
       <Project>{aade2f49-85d9-42a5-9b97-06064b31e5ad}</Project>
       <Name>Lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Lib.dll" />
+    <Content Include="bin\Debug\Lib.pdb" />
+    <Content Include="bin\Debug\Problem\Problem.xml" />
+    <Content Include="bin\Debug\Team_Agile.exe" />
+    <Content Include="bin\Debug\Team_Agile.pdb" />
+    <Content Include="obj\Debug\Team_Agile.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Team_Agile.exe" />
+    <Content Include="obj\Debug\Team_Agile.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

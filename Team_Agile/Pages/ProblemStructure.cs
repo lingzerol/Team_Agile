@@ -17,6 +17,7 @@ namespace Team_Agile.Pages
     {
         private XmlOperator xmlOperator = new XmlOperator();
         private int ID;
+        StructureOfProblem structureOfProblem = null;
         //private StructureOfQuestionbank structureOfQuestionbank = new StructureOfQuestionbank();
         public ProblemStructure(int ID)
         {
@@ -24,7 +25,7 @@ namespace Team_Agile.Pages
             this.Location = new System.Drawing.Point(500, 500);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             InitializeComponent();
-            StructureOfProblem structureOfProblem = null;
+            
             try
             {
                 structureOfProblem = ProblemList.GetProblem(ID);
@@ -74,11 +75,13 @@ namespace Team_Agile.Pages
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ((Form1)(this.ParentForm)).TurnForm(new SubmitProblem());
+            ((Form1)(this.ParentForm)).TurnForm(new SubmitProblem(structureOfProblem));
+            
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
+            
             ((Form1)this.ParentForm).TurnForm(new Questionbank());
             this.Close();
         }

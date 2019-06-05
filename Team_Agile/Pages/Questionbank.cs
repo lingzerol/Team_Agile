@@ -39,6 +39,8 @@ namespace Team_Agile.Pages
             {
                 ListViewItem list = new ListViewItem();
                 list.Text = ProblemList.GetProblem(key).AcceptsRate;
+                if (list.Text == "")
+                    list.Text = "Undo";
                 list.SubItems.Add(ProblemList.GetProblem(key).ProblemID.ToString());
                 list.SubItems.Add(ProblemList.GetProblem(key).QuestionName);
                 this.show_question.Items.Add(list);
