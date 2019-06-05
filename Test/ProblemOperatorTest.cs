@@ -24,7 +24,7 @@ namespace Test
             newProblem.OutputSample = "test";
             newProblem.QuestionDescription = "test";
             ProblemList.Add(newProblem);
-            Assert.AreEqual(ProblemList.GetAll().Values.Count,size);
+            Assert.AreEqual(ProblemList.GetAll().Values.Count,size+1);
         }
         [TestMethod]
         public void DeleteTest()
