@@ -36,6 +36,7 @@ namespace Team_Agile.Pages
             this.confirm = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.export_status = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // show_question
@@ -102,11 +103,22 @@ namespace Team_Agile.Pages
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.buttondelete_Click);
             // 
+            // export_status
+            // 
+            this.export_status.Location = new System.Drawing.Point(1006, 29);
+            this.export_status.Name = "export_status";
+            this.export_status.Size = new System.Drawing.Size(133, 23);
+            this.export_status.TabIndex = 6;
+            this.export_status.Text = "导出题目状态";
+            this.export_status.UseVisualStyleBackColor = true;
+            this.export_status.Click += new System.EventHandler(this.export_status_Click);
+            // 
             // Questionbank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 702);
+            this.Controls.Add(this.export_status);
             this.Controls.Add(this.show_question);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -128,6 +140,7 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.Button confirm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private Button export_status;
 
         public ListView Show_question { get => show_question; set => show_question = value; }
     }

@@ -130,5 +130,10 @@ namespace Team_Agile.Pages
             //MessageBox.Show(e.Item.SubItems[1].Text);
             ((Form1)(this.ParentForm)).TurnForm(new ProblemStructure(int.Parse(e.Item.SubItems[1].Text)));
         }
+
+        private void export_status_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
