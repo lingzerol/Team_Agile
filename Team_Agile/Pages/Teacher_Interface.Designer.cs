@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("PHP/MySQL三日通");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("第一天");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("第二天");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("第三天");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Php/Mysql三日通", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.TreeViewPanel = new System.Windows.Forms.Panel();
             this.Main_TreeView = new System.Windows.Forms.TreeView();
             this.panel_Problem = new System.Windows.Forms.Panel();
@@ -50,6 +56,8 @@
             this.Original_Output = new System.Windows.Forms.TabPage();
             this.Browse_Output = new System.Windows.Forms.TabPage();
             this.Note = new System.Windows.Forms.TabPage();
+            this.ProDelBtn = new System.Windows.Forms.Button();
+            this.ProAddBtn = new System.Windows.Forms.Button();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
@@ -59,6 +67,8 @@
             // 
             // TreeViewPanel
             // 
+            this.TreeViewPanel.Controls.Add(this.ProAddBtn);
+            this.TreeViewPanel.Controls.Add(this.ProDelBtn);
             this.TreeViewPanel.Controls.Add(this.Main_TreeView);
             this.TreeViewPanel.Location = new System.Drawing.Point(5, 5);
             this.TreeViewPanel.Name = "TreeViewPanel";
@@ -70,10 +80,16 @@
             this.Main_TreeView.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.Main_TreeView.Location = new System.Drawing.Point(0, 0);
             this.Main_TreeView.Name = "Main_TreeView";
-            treeNode2.Name = "Tree_Root";
-            treeNode2.Text = "PHP/MySQL三日通";
+            treeNode1.Name = "节点1";
+            treeNode1.Text = "第一天";
+            treeNode2.Name = "节点2";
+            treeNode2.Text = "第二天";
+            treeNode3.Name = "";
+            treeNode3.Text = "第三天";
+            treeNode4.Name = "节点0";
+            treeNode4.Text = "Php/Mysql三日通";
             this.Main_TreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode4});
             this.Main_TreeView.Size = new System.Drawing.Size(200, 550);
             this.Main_TreeView.TabIndex = 1;
             // 
@@ -273,6 +289,26 @@
             this.Note.Text = "笔记";
             this.Note.UseVisualStyleBackColor = true;
             // 
+            // ProDelBtn
+            // 
+            this.ProDelBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProDelBtn.Location = new System.Drawing.Point(34, 488);
+            this.ProDelBtn.Name = "ProDelBtn";
+            this.ProDelBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProDelBtn.TabIndex = 2;
+            this.ProDelBtn.Text = "删除";
+            this.ProDelBtn.UseVisualStyleBackColor = true;
+            // 
+            // ProAddBtn
+            // 
+            this.ProAddBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProAddBtn.Location = new System.Drawing.Point(34, 441);
+            this.ProAddBtn.Name = "ProAddBtn";
+            this.ProAddBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProAddBtn.TabIndex = 0;
+            this.ProAddBtn.Text = "添加";
+            this.ProAddBtn.UseVisualStyleBackColor = true;
+            // 
             // Teacher_Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -283,6 +319,7 @@
             this.Controls.Add(this.TreeViewPanel);
             this.Name = "Teacher_Interface";
             this.Text = "PHP编程开放实验工具-教师端";
+            this.Load += new System.EventHandler(this.Teacher_Interface_Load);
             this.TreeViewPanel.ResumeLayout(false);
             this.panel_Problem.ResumeLayout(false);
             this.panel_Problem.PerformLayout();
@@ -316,5 +353,7 @@
         private System.Windows.Forms.TabPage Original_Output;
         private System.Windows.Forms.TabPage Browse_Output;
         private System.Windows.Forms.TabPage Note;
+        private System.Windows.Forms.Button ProAddBtn;
+        private System.Windows.Forms.Button ProDelBtn;
     }
 }

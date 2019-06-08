@@ -16,5 +16,11 @@ namespace Team_Agile.Pages
         {
             InitializeComponent();
         }
+
+        private void Teacher_Interface_Load(object sender, EventArgs e)
+        {
+            this.Main_TreeView.LabelEdit = true;
+           
+        }
     }
 }

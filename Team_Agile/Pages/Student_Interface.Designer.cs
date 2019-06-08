@@ -28,37 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("PHP/MySQL三日通");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("PHP/MySQL三日通");
             this.TreeViewPanel = new System.Windows.Forms.Panel();
             this.Main_TreeView = new System.Windows.Forms.TreeView();
             this.panel_Problem = new System.Windows.Forms.Panel();
-            this.panel_Answer = new System.Windows.Forms.Panel();
+            this.label_Exercise_Name = new System.Windows.Forms.Label();
+            this.label_Exercise_title = new System.Windows.Forms.Label();
+            this.btn_Run_Code = new System.Windows.Forms.Button();
+            this.btn_Run_Answer = new System.Windows.Forms.Button();
+            this.btn_See_Answer = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.Problem_tabControl = new System.Windows.Forms.TabControl();
             this.Problem_Description = new System.Windows.Forms.TabPage();
             this.Problem_Description_HTML = new System.Windows.Forms.TabPage();
             this.Standard_Answer = new System.Windows.Forms.TabPage();
             this.Standard_Answer_Original_Output = new System.Windows.Forms.TabPage();
             this.Standard_Answer_Output_Browse = new System.Windows.Forms.TabPage();
+            this.panel_Answer = new System.Windows.Forms.Panel();
             this.Answer_tabControl = new System.Windows.Forms.TabControl();
             this.Answer_Code = new System.Windows.Forms.TabPage();
             this.Original_Output = new System.Windows.Forms.TabPage();
             this.Browse_Output = new System.Windows.Forms.TabPage();
             this.Note = new System.Windows.Forms.TabPage();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.btn_See_Answer = new System.Windows.Forms.Button();
-            this.btn_Run_Answer = new System.Windows.Forms.Button();
-            this.btn_Run_Code = new System.Windows.Forms.Button();
-            this.label_Exercise_title = new System.Windows.Forms.Label();
-            this.label_Exercise_Name = new System.Windows.Forms.Label();
+            this.ProAddBtn = new System.Windows.Forms.Button();
+            this.ProDelBtn = new System.Windows.Forms.Button();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
-            this.panel_Answer.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
+            this.panel_Answer.SuspendLayout();
             this.Answer_tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // TreeViewPanel
             // 
+            this.TreeViewPanel.Controls.Add(this.ProAddBtn);
+            this.TreeViewPanel.Controls.Add(this.ProDelBtn);
             this.TreeViewPanel.Controls.Add(this.Main_TreeView);
             this.TreeViewPanel.Location = new System.Drawing.Point(5, 5);
             this.TreeViewPanel.Name = "TreeViewPanel";
@@ -70,10 +74,10 @@
             this.Main_TreeView.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.Main_TreeView.Location = new System.Drawing.Point(0, 0);
             this.Main_TreeView.Name = "Main_TreeView";
-            treeNode2.Name = "Tree_Root";
-            treeNode2.Text = "PHP/MySQL三日通";
+            treeNode3.Name = "Tree_Root";
+            treeNode3.Text = "PHP/MySQL三日通";
             this.Main_TreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode3});
             this.Main_TreeView.Size = new System.Drawing.Size(200, 550);
             this.Main_TreeView.TabIndex = 1;
             // 
@@ -93,14 +97,60 @@
             this.panel_Problem.Size = new System.Drawing.Size(665, 330);
             this.panel_Problem.TabIndex = 1;
             // 
-            // panel_Answer
+            // label_Exercise_Name
             // 
-            this.panel_Answer.AutoScroll = true;
-            this.panel_Answer.Controls.Add(this.Answer_tabControl);
-            this.panel_Answer.Location = new System.Drawing.Point(211, 341);
-            this.panel_Answer.Name = "panel_Answer";
-            this.panel_Answer.Size = new System.Drawing.Size(665, 214);
-            this.panel_Answer.TabIndex = 2;
+            this.label_Exercise_Name.AutoSize = true;
+            this.label_Exercise_Name.Location = new System.Drawing.Point(62, 16);
+            this.label_Exercise_Name.Name = "label_Exercise_Name";
+            this.label_Exercise_Name.Size = new System.Drawing.Size(128, 20);
+            this.label_Exercise_Name.TabIndex = 6;
+            this.label_Exercise_Name.Text = "Name_of_Exercise";
+            // 
+            // label_Exercise_title
+            // 
+            this.label_Exercise_title.AutoSize = true;
+            this.label_Exercise_title.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.label_Exercise_title.Location = new System.Drawing.Point(14, 17);
+            this.label_Exercise_title.Name = "label_Exercise_title";
+            this.label_Exercise_title.Size = new System.Drawing.Size(51, 19);
+            this.label_Exercise_title.TabIndex = 5;
+            this.label_Exercise_title.Text = "练习：";
+            // 
+            // btn_Run_Code
+            // 
+            this.btn_Run_Code.Location = new System.Drawing.Point(552, 11);
+            this.btn_Run_Code.Name = "btn_Run_Code";
+            this.btn_Run_Code.Size = new System.Drawing.Size(105, 30);
+            this.btn_Run_Code.TabIndex = 4;
+            this.btn_Run_Code.Text = "运行解答代码";
+            this.btn_Run_Code.UseVisualStyleBackColor = true;
+            // 
+            // btn_Run_Answer
+            // 
+            this.btn_Run_Answer.Location = new System.Drawing.Point(441, 11);
+            this.btn_Run_Answer.Name = "btn_Run_Answer";
+            this.btn_Run_Answer.Size = new System.Drawing.Size(105, 30);
+            this.btn_Run_Answer.TabIndex = 3;
+            this.btn_Run_Answer.Text = "运行标准答案";
+            this.btn_Run_Answer.UseVisualStyleBackColor = true;
+            // 
+            // btn_See_Answer
+            // 
+            this.btn_See_Answer.Location = new System.Drawing.Point(330, 12);
+            this.btn_See_Answer.Name = "btn_See_Answer";
+            this.btn_See_Answer.Size = new System.Drawing.Size(105, 30);
+            this.btn_See_Answer.TabIndex = 2;
+            this.btn_See_Answer.Text = "查看标准答案";
+            this.btn_See_Answer.UseVisualStyleBackColor = true;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(219, 12);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(105, 30);
+            this.btn_Save.TabIndex = 1;
+            this.btn_Save.Text = "保存";
+            this.btn_Save.UseVisualStyleBackColor = true;
             // 
             // Problem_tabControl
             // 
@@ -165,6 +215,15 @@
             this.Standard_Answer_Output_Browse.Text = "标准答案输出浏览";
             this.Standard_Answer_Output_Browse.UseVisualStyleBackColor = true;
             // 
+            // panel_Answer
+            // 
+            this.panel_Answer.AutoScroll = true;
+            this.panel_Answer.Controls.Add(this.Answer_tabControl);
+            this.panel_Answer.Location = new System.Drawing.Point(211, 341);
+            this.panel_Answer.Name = "panel_Answer";
+            this.panel_Answer.Size = new System.Drawing.Size(665, 214);
+            this.panel_Answer.TabIndex = 2;
+            // 
             // Answer_tabControl
             // 
             this.Answer_tabControl.Controls.Add(this.Answer_Code);
@@ -193,7 +252,7 @@
             this.Original_Output.Location = new System.Drawing.Point(4, 28);
             this.Original_Output.Name = "Original_Output";
             this.Original_Output.Padding = new System.Windows.Forms.Padding(3);
-            this.Original_Output.Size = new System.Drawing.Size(657, 182);
+            this.Original_Output.Size = new System.Drawing.Size(653, 182);
             this.Original_Output.TabIndex = 1;
             this.Original_Output.Text = "原始输出";
             this.Original_Output.UseVisualStyleBackColor = true;
@@ -203,7 +262,7 @@
             this.Browse_Output.Location = new System.Drawing.Point(4, 28);
             this.Browse_Output.Name = "Browse_Output";
             this.Browse_Output.Padding = new System.Windows.Forms.Padding(3);
-            this.Browse_Output.Size = new System.Drawing.Size(657, 182);
+            this.Browse_Output.Size = new System.Drawing.Size(653, 182);
             this.Browse_Output.TabIndex = 2;
             this.Browse_Output.Text = "浏览输出";
             this.Browse_Output.UseVisualStyleBackColor = true;
@@ -213,65 +272,30 @@
             this.Note.Location = new System.Drawing.Point(4, 28);
             this.Note.Name = "Note";
             this.Note.Padding = new System.Windows.Forms.Padding(3);
-            this.Note.Size = new System.Drawing.Size(657, 182);
+            this.Note.Size = new System.Drawing.Size(653, 182);
             this.Note.TabIndex = 3;
             this.Note.Text = "笔记";
             this.Note.UseVisualStyleBackColor = true;
             // 
-            // btn_Save
+            // ProAddBtn
             // 
-            this.btn_Save.Location = new System.Drawing.Point(219, 12);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(105, 30);
-            this.btn_Save.TabIndex = 1;
-            this.btn_Save.Text = "保存";
-            this.btn_Save.UseVisualStyleBackColor = true;
+            this.ProAddBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProAddBtn.Location = new System.Drawing.Point(34, 441);
+            this.ProAddBtn.Name = "ProAddBtn";
+            this.ProAddBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProAddBtn.TabIndex = 3;
+            this.ProAddBtn.Text = "添加";
+            this.ProAddBtn.UseVisualStyleBackColor = true;
             // 
-            // btn_See_Answer
+            // ProDelBtn
             // 
-            this.btn_See_Answer.Location = new System.Drawing.Point(330, 12);
-            this.btn_See_Answer.Name = "btn_See_Answer";
-            this.btn_See_Answer.Size = new System.Drawing.Size(105, 30);
-            this.btn_See_Answer.TabIndex = 2;
-            this.btn_See_Answer.Text = "查看标准答案";
-            this.btn_See_Answer.UseVisualStyleBackColor = true;
-            // 
-            // btn_Run_Answer
-            // 
-            this.btn_Run_Answer.Location = new System.Drawing.Point(441, 11);
-            this.btn_Run_Answer.Name = "btn_Run_Answer";
-            this.btn_Run_Answer.Size = new System.Drawing.Size(105, 30);
-            this.btn_Run_Answer.TabIndex = 3;
-            this.btn_Run_Answer.Text = "运行标准答案";
-            this.btn_Run_Answer.UseVisualStyleBackColor = true;
-            // 
-            // btn_Run_Code
-            // 
-            this.btn_Run_Code.Location = new System.Drawing.Point(552, 11);
-            this.btn_Run_Code.Name = "btn_Run_Code";
-            this.btn_Run_Code.Size = new System.Drawing.Size(105, 30);
-            this.btn_Run_Code.TabIndex = 4;
-            this.btn_Run_Code.Text = "运行解答代码";
-            this.btn_Run_Code.UseVisualStyleBackColor = true;
-            // 
-            // label_Exercise_title
-            // 
-            this.label_Exercise_title.AutoSize = true;
-            this.label_Exercise_title.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.label_Exercise_title.Location = new System.Drawing.Point(14, 17);
-            this.label_Exercise_title.Name = "label_Exercise_title";
-            this.label_Exercise_title.Size = new System.Drawing.Size(51, 19);
-            this.label_Exercise_title.TabIndex = 5;
-            this.label_Exercise_title.Text = "练习：";
-            // 
-            // label_Exercise_Name
-            // 
-            this.label_Exercise_Name.AutoSize = true;
-            this.label_Exercise_Name.Location = new System.Drawing.Point(62, 16);
-            this.label_Exercise_Name.Name = "label_Exercise_Name";
-            this.label_Exercise_Name.Size = new System.Drawing.Size(128, 20);
-            this.label_Exercise_Name.TabIndex = 6;
-            this.label_Exercise_Name.Text = "Name_of_Exercise";
+            this.ProDelBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProDelBtn.Location = new System.Drawing.Point(34, 488);
+            this.ProDelBtn.Name = "ProDelBtn";
+            this.ProDelBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProDelBtn.TabIndex = 4;
+            this.ProDelBtn.Text = "删除";
+            this.ProDelBtn.UseVisualStyleBackColor = true;
             // 
             // Student_Interface
             // 
@@ -286,8 +310,8 @@
             this.TreeViewPanel.ResumeLayout(false);
             this.panel_Problem.ResumeLayout(false);
             this.panel_Problem.PerformLayout();
-            this.panel_Answer.ResumeLayout(false);
             this.Problem_tabControl.ResumeLayout(false);
+            this.panel_Answer.ResumeLayout(false);
             this.Answer_tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -316,5 +340,7 @@
         private System.Windows.Forms.TabPage Original_Output;
         private System.Windows.Forms.TabPage Browse_Output;
         private System.Windows.Forms.TabPage Note;
+        private System.Windows.Forms.Button ProAddBtn;
+        private System.Windows.Forms.Button ProDelBtn;
     }
 }
