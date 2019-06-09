@@ -1,4 +1,6 @@
-﻿namespace Team_Agile.Pages
+﻿using Lib;
+
+namespace Team_Agile.Pages
 {
     partial class Teacher_Interface
     {
@@ -36,6 +38,8 @@
             treeNode2,
             treeNode3});
             this.TreeViewPanel = new System.Windows.Forms.Panel();
+            this.ProAddBtn = new System.Windows.Forms.Button();
+            this.ProDelBtn = new System.Windows.Forms.Button();
             this.Main_TreeView = new System.Windows.Forms.TreeView();
             this.panel_Problem = new System.Windows.Forms.Panel();
             this.label_Exercise_Name = new System.Windows.Forms.Label();
@@ -47,22 +51,26 @@
             this.Problem_tabControl = new System.Windows.Forms.TabControl();
             this.Problem_Description = new System.Windows.Forms.TabPage();
             this.Problem_Description_HTML = new System.Windows.Forms.TabPage();
+            this.ProDescTextBox = new System.Windows.Forms.RichTextBox();
             this.Standard_Answer = new System.Windows.Forms.TabPage();
+            this.StdAnswerTextBox = new System.Windows.Forms.RichTextBox();
             this.Standard_Answer_Original_Output = new System.Windows.Forms.TabPage();
             this.Standard_Answer_Output_Browse = new System.Windows.Forms.TabPage();
             this.panel_Answer = new System.Windows.Forms.Panel();
             this.Answer_tabControl = new System.Windows.Forms.TabControl();
             this.Answer_Code = new System.Windows.Forms.TabPage();
+            this.CodeTextBox = new System.Windows.Forms.RichTextBox();
             this.Original_Output = new System.Windows.Forms.TabPage();
             this.Browse_Output = new System.Windows.Forms.TabPage();
             this.Note = new System.Windows.Forms.TabPage();
-            this.ProDelBtn = new System.Windows.Forms.Button();
-            this.ProAddBtn = new System.Windows.Forms.Button();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
+            this.Problem_Description_HTML.SuspendLayout();
+            this.Standard_Answer.SuspendLayout();
             this.panel_Answer.SuspendLayout();
             this.Answer_tabControl.SuspendLayout();
+            this.Answer_Code.SuspendLayout();
             this.SuspendLayout();
             // 
             // TreeViewPanel
@@ -74,6 +82,28 @@
             this.TreeViewPanel.Name = "TreeViewPanel";
             this.TreeViewPanel.Size = new System.Drawing.Size(200, 550);
             this.TreeViewPanel.TabIndex = 0;
+            // 
+            // ProAddBtn
+            // 
+            this.ProAddBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProAddBtn.Location = new System.Drawing.Point(34, 441);
+            this.ProAddBtn.Name = "ProAddBtn";
+            this.ProAddBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProAddBtn.TabIndex = 0;
+            this.ProAddBtn.Text = "添加";
+            this.ProAddBtn.UseVisualStyleBackColor = true;
+            this.ProAddBtn.Click += new System.EventHandler(this.ProAddBtn_Click);
+            // 
+            // ProDelBtn
+            // 
+            this.ProDelBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProDelBtn.Location = new System.Drawing.Point(34, 488);
+            this.ProDelBtn.Name = "ProDelBtn";
+            this.ProDelBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProDelBtn.TabIndex = 2;
+            this.ProDelBtn.Text = "删除";
+            this.ProDelBtn.UseVisualStyleBackColor = true;
+            this.ProDelBtn.Click += new System.EventHandler(this.ProDelBtn_Click);
             // 
             // Main_TreeView
             // 
@@ -92,6 +122,7 @@
             treeNode4});
             this.Main_TreeView.Size = new System.Drawing.Size(200, 550);
             this.Main_TreeView.TabIndex = 1;
+            this.Main_TreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Main_TreeView_AfterSelect);
             // 
             // panel_Problem
             // 
@@ -189,6 +220,7 @@
             // 
             // Problem_Description_HTML
             // 
+            this.Problem_Description_HTML.Controls.Add(this.ProDescTextBox);
             this.Problem_Description_HTML.Location = new System.Drawing.Point(4, 28);
             this.Problem_Description_HTML.Name = "Problem_Description_HTML";
             this.Problem_Description_HTML.Padding = new System.Windows.Forms.Padding(3);
@@ -197,8 +229,19 @@
             this.Problem_Description_HTML.Text = "问题描述HTML";
             this.Problem_Description_HTML.UseVisualStyleBackColor = true;
             // 
+            // ProDescTextBox
+            // 
+            this.ProDescTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProDescTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProDescTextBox.Location = new System.Drawing.Point(3, 3);
+            this.ProDescTextBox.Name = "ProDescTextBox";
+            this.ProDescTextBox.Size = new System.Drawing.Size(647, 244);
+            this.ProDescTextBox.TabIndex = 0;
+            this.ProDescTextBox.Text = "";
+            // 
             // Standard_Answer
             // 
+            this.Standard_Answer.Controls.Add(this.StdAnswerTextBox);
             this.Standard_Answer.Location = new System.Drawing.Point(4, 28);
             this.Standard_Answer.Name = "Standard_Answer";
             this.Standard_Answer.Padding = new System.Windows.Forms.Padding(3);
@@ -206,6 +249,16 @@
             this.Standard_Answer.TabIndex = 2;
             this.Standard_Answer.Text = "标准答案";
             this.Standard_Answer.UseVisualStyleBackColor = true;
+            // 
+            // StdAnswerTextBox
+            // 
+            this.StdAnswerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StdAnswerTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StdAnswerTextBox.Location = new System.Drawing.Point(3, 3);
+            this.StdAnswerTextBox.Name = "StdAnswerTextBox";
+            this.StdAnswerTextBox.Size = new System.Drawing.Size(647, 244);
+            this.StdAnswerTextBox.TabIndex = 0;
+            this.StdAnswerTextBox.Text = "";
             // 
             // Standard_Answer_Original_Output
             // 
@@ -251,6 +304,7 @@
             // 
             // Answer_Code
             // 
+            this.Answer_Code.Controls.Add(this.CodeTextBox);
             this.Answer_Code.Location = new System.Drawing.Point(4, 28);
             this.Answer_Code.Name = "Answer_Code";
             this.Answer_Code.Padding = new System.Windows.Forms.Padding(3);
@@ -258,6 +312,16 @@
             this.Answer_Code.TabIndex = 0;
             this.Answer_Code.Text = "解答代码";
             this.Answer_Code.UseVisualStyleBackColor = true;
+            // 
+            // CodeTextBox
+            // 
+            this.CodeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CodeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodeTextBox.Location = new System.Drawing.Point(3, 3);
+            this.CodeTextBox.Name = "CodeTextBox";
+            this.CodeTextBox.Size = new System.Drawing.Size(647, 176);
+            this.CodeTextBox.TabIndex = 0;
+            this.CodeTextBox.Text = "";
             // 
             // Original_Output
             // 
@@ -289,26 +353,6 @@
             this.Note.Text = "笔记";
             this.Note.UseVisualStyleBackColor = true;
             // 
-            // ProDelBtn
-            // 
-            this.ProDelBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.ProDelBtn.Location = new System.Drawing.Point(34, 488);
-            this.ProDelBtn.Name = "ProDelBtn";
-            this.ProDelBtn.Size = new System.Drawing.Size(130, 30);
-            this.ProDelBtn.TabIndex = 2;
-            this.ProDelBtn.Text = "删除";
-            this.ProDelBtn.UseVisualStyleBackColor = true;
-            // 
-            // ProAddBtn
-            // 
-            this.ProAddBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.ProAddBtn.Location = new System.Drawing.Point(34, 441);
-            this.ProAddBtn.Name = "ProAddBtn";
-            this.ProAddBtn.Size = new System.Drawing.Size(130, 30);
-            this.ProAddBtn.TabIndex = 0;
-            this.ProAddBtn.Text = "添加";
-            this.ProAddBtn.UseVisualStyleBackColor = true;
-            // 
             // Teacher_Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -324,14 +368,17 @@
             this.panel_Problem.ResumeLayout(false);
             this.panel_Problem.PerformLayout();
             this.Problem_tabControl.ResumeLayout(false);
+            this.Problem_Description_HTML.ResumeLayout(false);
+            this.Standard_Answer.ResumeLayout(false);
             this.panel_Answer.ResumeLayout(false);
             this.Answer_tabControl.ResumeLayout(false);
+            this.Answer_Code.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        SerializableDictionary<int, StructureOfProblem> problems = ProblemList.GetAll();
         private System.Windows.Forms.Panel TreeViewPanel;
         private System.Windows.Forms.TreeView Main_TreeView;
         private System.Windows.Forms.Panel panel_Problem;
@@ -355,5 +402,8 @@
         private System.Windows.Forms.TabPage Note;
         private System.Windows.Forms.Button ProAddBtn;
         private System.Windows.Forms.Button ProDelBtn;
+        private System.Windows.Forms.RichTextBox ProDescTextBox;
+        private System.Windows.Forms.RichTextBox StdAnswerTextBox;
+        private System.Windows.Forms.RichTextBox CodeTextBox;
     }
 }
