@@ -13,10 +13,10 @@ namespace Team_Agile
 {
     public partial class Form1 : Form
     {
-        public Form1(int id)
+        public Form1()
         {
             InitializeComponent();
-            TurnForm(new ProblemStructure(id));
+            TurnForm(new Login());
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -19,16 +19,12 @@ namespace Team_Agile.Pages
 
         private void Login_Stubutton_Click(object sender, EventArgs e)
         {
-            Student_Interface stu = new Student_Interface();
-            stu.Show();
-            this.Close();
+            ((Form1)this.ParentForm).TurnForm(new Student_Interface());
         }
 
         private void Login_TchButton_Click(object sender, EventArgs e)
         {
-            Teacher_Interface tch = new Teacher_Interface();
-            tch.Show();
-            this.Close();
+            ((Form1)this.ParentForm).TurnForm(new Teacher_Interface());
         }
     }
 }

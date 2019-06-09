@@ -35,8 +35,7 @@ namespace Team_Agile
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new Login().Show();
-            Application.Run();
+            Application.Run(new Form1());
         }
     }
 }

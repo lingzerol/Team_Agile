@@ -27,14 +27,14 @@ namespace Team_Agile.Pages
                 {           
                     if(e.Node.Text == ProblemList.GetProblem(key).QuestionName)
                     {
-                        Form1 form = new Form1(ProblemList.GetProblem(key).ProblemID);
-                        form.FormBorderStyle = FormBorderStyle.None;
-                        form.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.panel1.Controls.Clear();
-                        form.TopLevel = false;
-                        panel1.Controls.Add(form);
-                        form.Show();          
-                        break;
+                        //Form1 form = new Form1(ProblemList.GetProblem(key).ProblemID);
+                        //form.FormBorderStyle = FormBorderStyle.None;
+                        //form.Dock = System.Windows.Forms.DockStyle.Fill;
+                        //this.panel1.Controls.Clear();
+                        //form.TopLevel = false;
+                        //panel1.Controls.Add(form);
+                        //form.Show();          
+                        //break;
                     }                  
                 }
                            

@@ -76,6 +76,7 @@
     <Compile Include="ShowstatusTest.cs" />
     <Compile Include="SubmitTest.cs" />
     <Compile Include="ProblemOperatorTest.cs" />
+    <Compile Include="TeacherInterfaceTest.cs" />
     <Compile Include="XmlTest.cs" />
   </ItemGroup>
   <ItemGroup>
