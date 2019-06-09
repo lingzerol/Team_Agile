@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("PHP/MySQL三日通");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("PHP/MySQL三日通");
             this.TreeViewPanel = new System.Windows.Forms.Panel();
+            this.ProAddBtn = new System.Windows.Forms.Button();
+            this.ProDelBtn = new System.Windows.Forms.Button();
             this.Main_TreeView = new System.Windows.Forms.TreeView();
             this.panel_Problem = new System.Windows.Forms.Panel();
             this.label_Exercise_Name = new System.Windows.Forms.Label();
@@ -50,13 +52,15 @@
             this.Original_Output = new System.Windows.Forms.TabPage();
             this.Browse_Output = new System.Windows.Forms.TabPage();
             this.Note = new System.Windows.Forms.TabPage();
-            this.ProAddBtn = new System.Windows.Forms.Button();
-            this.ProDelBtn = new System.Windows.Forms.Button();
+            this.CodeTextBox = new System.Windows.Forms.RichTextBox();
+            this.NoteTextBox = new System.Windows.Forms.RichTextBox();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
             this.panel_Answer.SuspendLayout();
             this.Answer_tabControl.SuspendLayout();
+            this.Answer_Code.SuspendLayout();
+            this.Note.SuspendLayout();
             this.SuspendLayout();
             // 
             // TreeViewPanel
@@ -69,15 +73,35 @@
             this.TreeViewPanel.Size = new System.Drawing.Size(200, 550);
             this.TreeViewPanel.TabIndex = 0;
             // 
+            // ProAddBtn
+            // 
+            this.ProAddBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProAddBtn.Location = new System.Drawing.Point(34, 441);
+            this.ProAddBtn.Name = "ProAddBtn";
+            this.ProAddBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProAddBtn.TabIndex = 3;
+            this.ProAddBtn.Text = "添加";
+            this.ProAddBtn.UseVisualStyleBackColor = true;
+            // 
+            // ProDelBtn
+            // 
+            this.ProDelBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.ProDelBtn.Location = new System.Drawing.Point(34, 488);
+            this.ProDelBtn.Name = "ProDelBtn";
+            this.ProDelBtn.Size = new System.Drawing.Size(130, 30);
+            this.ProDelBtn.TabIndex = 4;
+            this.ProDelBtn.Text = "删除";
+            this.ProDelBtn.UseVisualStyleBackColor = true;
+            // 
             // Main_TreeView
             // 
             this.Main_TreeView.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.Main_TreeView.Location = new System.Drawing.Point(0, 0);
             this.Main_TreeView.Name = "Main_TreeView";
-            treeNode3.Name = "Tree_Root";
-            treeNode3.Text = "PHP/MySQL三日通";
+            treeNode1.Name = "Tree_Root";
+            treeNode1.Text = "PHP/MySQL三日通";
             this.Main_TreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode1});
             this.Main_TreeView.Size = new System.Drawing.Size(200, 550);
             this.Main_TreeView.TabIndex = 1;
             // 
@@ -239,6 +263,7 @@
             // 
             // Answer_Code
             // 
+            this.Answer_Code.Controls.Add(this.CodeTextBox);
             this.Answer_Code.Location = new System.Drawing.Point(4, 28);
             this.Answer_Code.Name = "Answer_Code";
             this.Answer_Code.Padding = new System.Windows.Forms.Padding(3);
@@ -269,6 +294,7 @@
             // 
             // Note
             // 
+            this.Note.Controls.Add(this.NoteTextBox);
             this.Note.Location = new System.Drawing.Point(4, 28);
             this.Note.Name = "Note";
             this.Note.Padding = new System.Windows.Forms.Padding(3);
@@ -277,25 +303,25 @@
             this.Note.Text = "笔记";
             this.Note.UseVisualStyleBackColor = true;
             // 
-            // ProAddBtn
+            // CodeTextBox
             // 
-            this.ProAddBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.ProAddBtn.Location = new System.Drawing.Point(34, 441);
-            this.ProAddBtn.Name = "ProAddBtn";
-            this.ProAddBtn.Size = new System.Drawing.Size(130, 30);
-            this.ProAddBtn.TabIndex = 3;
-            this.ProAddBtn.Text = "添加";
-            this.ProAddBtn.UseVisualStyleBackColor = true;
+            this.CodeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CodeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodeTextBox.Location = new System.Drawing.Point(3, 3);
+            this.CodeTextBox.Name = "CodeTextBox";
+            this.CodeTextBox.Size = new System.Drawing.Size(647, 176);
+            this.CodeTextBox.TabIndex = 0;
+            this.CodeTextBox.Text = "";
             // 
-            // ProDelBtn
+            // NoteTextBox
             // 
-            this.ProDelBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.ProDelBtn.Location = new System.Drawing.Point(34, 488);
-            this.ProDelBtn.Name = "ProDelBtn";
-            this.ProDelBtn.Size = new System.Drawing.Size(130, 30);
-            this.ProDelBtn.TabIndex = 4;
-            this.ProDelBtn.Text = "删除";
-            this.ProDelBtn.UseVisualStyleBackColor = true;
+            this.NoteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NoteTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NoteTextBox.Location = new System.Drawing.Point(3, 3);
+            this.NoteTextBox.Name = "NoteTextBox";
+            this.NoteTextBox.Size = new System.Drawing.Size(647, 176);
+            this.NoteTextBox.TabIndex = 0;
+            this.NoteTextBox.Text = "";
             // 
             // Student_Interface
             // 
@@ -313,6 +339,8 @@
             this.Problem_tabControl.ResumeLayout(false);
             this.panel_Answer.ResumeLayout(false);
             this.Answer_tabControl.ResumeLayout(false);
+            this.Answer_Code.ResumeLayout(false);
+            this.Note.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -342,5 +370,7 @@
         private System.Windows.Forms.TabPage Note;
         private System.Windows.Forms.Button ProAddBtn;
         private System.Windows.Forms.Button ProDelBtn;
+        private System.Windows.Forms.RichTextBox CodeTextBox;
+        private System.Windows.Forms.RichTextBox NoteTextBox;
     }
 }
