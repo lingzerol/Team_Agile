@@ -23,6 +23,7 @@ namespace Lib
         private string outputSample;
         private string hint;
         private int problemID;
+        private string problemcode;
 
         public StructureOfProblem()
         {
@@ -39,6 +40,7 @@ namespace Lib
             outputSample = "";
             hint = "";
             problemID=-1;
+            problemcode = "";
     }
 
         public string QuestionName { get => questionName; set => questionName = value; }
@@ -54,5 +56,6 @@ namespace Lib
         public string OutputSample { get => outputSample; set => outputSample = value; }
         public string Hint { get => hint; set => hint = value; }
         public int ProblemID { get => problemID; set => problemID = value; }
+        public string Problemcode { get => problemcode; set => problemcode = value; }
     }
 }
