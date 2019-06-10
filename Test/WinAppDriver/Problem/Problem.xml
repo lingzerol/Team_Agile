@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<SerializableDictionaryOfInt32StructureOfProblem>
+  <SerializableDictionary>
+    <key>
+      <int>1</int>
+    </key>
+    <value>
+      <StructureOfProblem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <QuestionName>动态规划</QuestionName>
+        <TimeLimitIndex />
+        <MemoryLimitIndex />
+        <TotalSubmits />
+        <TotalAccepts />
+        <AcceptsRate>Accept</AcceptsRate>
+        <QuestionDescription />
+        <InputDescription />
+        <OutputDescription />
+        <InputSample />
+        <OutputSample />
+        <Hint />
+        <ProblemID>1</ProblemID>
+        <Problemcode />
+      </StructureOfProblem>
+    </value>
+  </SerializableDictionary>
+  <SerializableDictionary>
+    <key>
+      <int>2</int>
+    </key>
+    <value>
+      <StructureOfProblem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <QuestionName>背包问题</QuestionName>
+        <TimeLimitIndex />
+        <MemoryLimitIndex />
+        <TotalSubmits />
+        <TotalAccepts />
+        <AcceptsRate>Accept</AcceptsRate>
+        <QuestionDescription />
+        <InputDescription />
+        <OutputDescription />
+        <InputSample />
+        <OutputSample />
+        <Hint />
+        <ProblemID>2</ProblemID>
+        <Problemcode />
+      </StructureOfProblem>
+    </value>
+  </SerializableDictionary>
+  <SerializableDictionary>
+    <key>
+      <int>4</int>
+    </key>
+    <value>
+      <StructureOfProblem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <QuestionName>自动机</QuestionName>
+        <TimeLimitIndex />
+        <MemoryLimitIndex />
+        <TotalSubmits />
+        <TotalAccepts />
+        <AcceptsRate>false</AcceptsRate>
+        <QuestionDescription />
+        <InputDescription />
+        <OutputDescription />
+        <InputSample />
+        <OutputSample />
+        <Hint />
+        <ProblemID>4</ProblemID>
+        <Problemcode />
+      </StructureOfProblem>
+    </value>
+  </SerializableDictionary>
+</SerializableDictionaryOfInt32StructureOfProblem>
