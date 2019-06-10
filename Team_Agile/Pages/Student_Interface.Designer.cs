@@ -49,30 +49,34 @@ namespace Team_Agile.Pages
             this.ProblemDec = new System.Windows.Forms.RichTextBox();
             this.Standard_Answer = new System.Windows.Forms.TabPage();
             this.StandardAnswer = new System.Windows.Forms.RichTextBox();
-            this.Standard_Answer_Original_Output = new System.Windows.Forms.TabPage();
-            this.Standard_output = new System.Windows.Forms.RichTextBox();
             this.Standard_Answer_Output_Browse = new System.Windows.Forms.TabPage();
             this.panel_Answer = new System.Windows.Forms.Panel();
             this.Answer_tabControl = new System.Windows.Forms.TabControl();
             this.Answer_Code = new System.Windows.Forms.TabPage();
             this.problemcode = new System.Windows.Forms.RichTextBox();
-            this.Original_Output = new System.Windows.Forms.TabPage();
             this.Browse_Output = new System.Windows.Forms.TabPage();
             this.Browser_output = new System.Windows.Forms.RichTextBox();
             this.Note = new System.Windows.Forms.TabPage();
             this.NoteTextBox = new System.Windows.Forms.RichTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.StandarOutputrichTextBox = new System.Windows.Forms.RichTextBox();
+            this.InputSample = new System.Windows.Forms.TabPage();
+            this.OutputSample = new System.Windows.Forms.TabPage();
+            this.InputSamplerichTextBox = new System.Windows.Forms.RichTextBox();
+            this.OutputSamplerichTextBox = new System.Windows.Forms.RichTextBox();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
             this.Problem_Description.SuspendLayout();
             this.Standard_Answer.SuspendLayout();
-            this.Standard_Answer_Original_Output.SuspendLayout();
+            this.Standard_Answer_Output_Browse.SuspendLayout();
             this.panel_Answer.SuspendLayout();
             this.Answer_tabControl.SuspendLayout();
             this.Answer_Code.SuspendLayout();
             this.Browse_Output.SuspendLayout();
             this.Note.SuspendLayout();
+            this.InputSample.SuspendLayout();
+            this.OutputSample.SuspendLayout();
             this.SuspendLayout();
             // 
             // TreeViewPanel
@@ -218,8 +222,9 @@ namespace Team_Agile.Pages
             // 
             this.Problem_tabControl.Controls.Add(this.Problem_Description);
             this.Problem_tabControl.Controls.Add(this.Standard_Answer);
-            this.Problem_tabControl.Controls.Add(this.Standard_Answer_Original_Output);
             this.Problem_tabControl.Controls.Add(this.Standard_Answer_Output_Browse);
+            this.Problem_tabControl.Controls.Add(this.InputSample);
+            this.Problem_tabControl.Controls.Add(this.OutputSample);
             this.Problem_tabControl.Location = new System.Drawing.Point(0, 60);
             this.Problem_tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.Problem_tabControl.Name = "Problem_tabControl";
@@ -285,30 +290,9 @@ namespace Team_Agile.Pages
             this.StandardAnswer.TabIndex = 0;
             this.StandardAnswer.Text = "";
             // 
-            // Standard_Answer_Original_Output
-            // 
-            this.Standard_Answer_Original_Output.Controls.Add(this.Standard_output);
-            this.Standard_Answer_Original_Output.Location = new System.Drawing.Point(4, 32);
-            this.Standard_Answer_Original_Output.Margin = new System.Windows.Forms.Padding(4);
-            this.Standard_Answer_Original_Output.Name = "Standard_Answer_Original_Output";
-            this.Standard_Answer_Original_Output.Padding = new System.Windows.Forms.Padding(4);
-            this.Standard_Answer_Original_Output.Size = new System.Drawing.Size(873, 316);
-            this.Standard_Answer_Original_Output.TabIndex = 3;
-            this.Standard_Answer_Original_Output.Text = "标准答案原始输出";
-            this.Standard_Answer_Original_Output.UseVisualStyleBackColor = true;
-            // 
-            // Standard_output
-            // 
-            this.Standard_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Standard_output.Location = new System.Drawing.Point(0, 0);
-            this.Standard_output.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Standard_output.Name = "Standard_output";
-            this.Standard_output.Size = new System.Drawing.Size(873, 316);
-            this.Standard_output.TabIndex = 0;
-            this.Standard_output.Text = "";
-            // 
             // Standard_Answer_Output_Browse
             // 
+            this.Standard_Answer_Output_Browse.Controls.Add(this.StandarOutputrichTextBox);
             this.Standard_Answer_Output_Browse.Location = new System.Drawing.Point(4, 32);
             this.Standard_Answer_Output_Browse.Margin = new System.Windows.Forms.Padding(4);
             this.Standard_Answer_Output_Browse.Name = "Standard_Answer_Output_Browse";
@@ -331,7 +315,6 @@ namespace Team_Agile.Pages
             // Answer_tabControl
             // 
             this.Answer_tabControl.Controls.Add(this.Answer_Code);
-            this.Answer_tabControl.Controls.Add(this.Original_Output);
             this.Answer_tabControl.Controls.Add(this.Browse_Output);
             this.Answer_tabControl.Controls.Add(this.Note);
             this.Answer_tabControl.Font = new System.Drawing.Font("微软雅黑", 10F);
@@ -364,17 +347,6 @@ namespace Team_Agile.Pages
             this.problemcode.Size = new System.Drawing.Size(873, 236);
             this.problemcode.TabIndex = 0;
             this.problemcode.Text = "";
-            // 
-            // Original_Output
-            // 
-            this.Original_Output.Location = new System.Drawing.Point(4, 32);
-            this.Original_Output.Margin = new System.Windows.Forms.Padding(4);
-            this.Original_Output.Name = "Original_Output";
-            this.Original_Output.Padding = new System.Windows.Forms.Padding(4);
-            this.Original_Output.Size = new System.Drawing.Size(873, 232);
-            this.Original_Output.TabIndex = 1;
-            this.Original_Output.Text = "原始输出";
-            this.Original_Output.UseVisualStyleBackColor = true;
             // 
             // Browse_Output
             // 
@@ -429,6 +401,62 @@ namespace Team_Agile.Pages
             this.imageList1.Images.SetKeyName(1, "正确.png");
             this.imageList1.Images.SetKeyName(2, "错误.png");
             // 
+            // StandarOutputrichTextBox
+            // 
+            this.StandarOutputrichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StandarOutputrichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StandarOutputrichTextBox.Location = new System.Drawing.Point(4, 4);
+            this.StandarOutputrichTextBox.Name = "StandarOutputrichTextBox";
+            this.StandarOutputrichTextBox.Size = new System.Drawing.Size(865, 308);
+            this.StandarOutputrichTextBox.TabIndex = 0;
+            this.StandarOutputrichTextBox.Text = "";
+            // 
+            // InputSample
+            // 
+            this.InputSample.Controls.Add(this.InputSamplerichTextBox);
+            this.InputSample.Location = new System.Drawing.Point(4, 32);
+            this.InputSample.Name = "InputSample";
+            this.InputSample.Padding = new System.Windows.Forms.Padding(3);
+            this.InputSample.Size = new System.Drawing.Size(873, 316);
+            this.InputSample.TabIndex = 5;
+            this.InputSample.Text = "输入样例";
+            this.InputSample.UseVisualStyleBackColor = true;
+            // 
+            // OutputSample
+            // 
+            this.OutputSample.Controls.Add(this.OutputSamplerichTextBox);
+            this.OutputSample.Location = new System.Drawing.Point(4, 32);
+            this.OutputSample.Name = "OutputSample";
+            this.OutputSample.Padding = new System.Windows.Forms.Padding(3);
+            this.OutputSample.Size = new System.Drawing.Size(873, 316);
+            this.OutputSample.TabIndex = 6;
+            this.OutputSample.Text = "输出样例";
+            this.OutputSample.UseVisualStyleBackColor = true;
+            // 
+            // InputSamplerichTextBox
+            // 
+            this.InputSamplerichTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.InputSamplerichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InputSamplerichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InputSamplerichTextBox.Location = new System.Drawing.Point(3, 3);
+            this.InputSamplerichTextBox.Name = "InputSamplerichTextBox";
+            this.InputSamplerichTextBox.ReadOnly = true;
+            this.InputSamplerichTextBox.Size = new System.Drawing.Size(867, 310);
+            this.InputSamplerichTextBox.TabIndex = 0;
+            this.InputSamplerichTextBox.Text = "";
+            // 
+            // OutputSamplerichTextBox
+            // 
+            this.OutputSamplerichTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.OutputSamplerichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OutputSamplerichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OutputSamplerichTextBox.Location = new System.Drawing.Point(3, 3);
+            this.OutputSamplerichTextBox.Name = "OutputSamplerichTextBox";
+            this.OutputSamplerichTextBox.ReadOnly = true;
+            this.OutputSamplerichTextBox.Size = new System.Drawing.Size(867, 310);
+            this.OutputSamplerichTextBox.TabIndex = 0;
+            this.OutputSamplerichTextBox.Text = "";
+            // 
             // Student_Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -447,12 +475,14 @@ namespace Team_Agile.Pages
             this.Problem_tabControl.ResumeLayout(false);
             this.Problem_Description.ResumeLayout(false);
             this.Standard_Answer.ResumeLayout(false);
-            this.Standard_Answer_Original_Output.ResumeLayout(false);
+            this.Standard_Answer_Output_Browse.ResumeLayout(false);
             this.panel_Answer.ResumeLayout(false);
             this.Answer_tabControl.ResumeLayout(false);
             this.Answer_Code.ResumeLayout(false);
             this.Browse_Output.ResumeLayout(false);
             this.Note.ResumeLayout(false);
+            this.InputSample.ResumeLayout(false);
+            this.OutputSample.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -465,7 +495,6 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.TabControl Problem_tabControl;
         private System.Windows.Forms.TabPage Problem_Description;
         private System.Windows.Forms.TabPage Standard_Answer;
-        private System.Windows.Forms.TabPage Standard_Answer_Original_Output;
         private System.Windows.Forms.Panel panel_Answer;
         private System.Windows.Forms.Label label_Exercise_Name;
         private System.Windows.Forms.Label label_Exercise_title;
@@ -474,21 +503,24 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.Button btn_See_Answer;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.TabPage Standard_Answer_Output_Browse;
-        private System.Windows.Forms.TabControl Answer_tabControl;
-        private System.Windows.Forms.TabPage Original_Output;
-        private System.Windows.Forms.TabPage Browse_Output;
-        private System.Windows.Forms.TabPage Note;
         private System.Windows.Forms.Button ProAddBtn;
         private System.Windows.Forms.Button ProDelBtn;
         private System.Windows.Forms.Button ExportStatusBtn;
-        private System.Windows.Forms.TabPage Answer_Code;
-        private System.Windows.Forms.RichTextBox problemcode;
         private System.Windows.Forms.RichTextBox ProblemDec;
         private System.Windows.Forms.RichTextBox StandardAnswer;
-        private System.Windows.Forms.RichTextBox Standard_output;
-        private System.Windows.Forms.RichTextBox Browser_output;
-        private System.Windows.Forms.RichTextBox NoteTextBox;
         private System.Windows.Forms.WebBrowser ProblemWebBrowser;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TabControl Answer_tabControl;
+        private System.Windows.Forms.TabPage Browse_Output;
+        private System.Windows.Forms.RichTextBox Browser_output;
+        private System.Windows.Forms.TabPage Note;
+        private System.Windows.Forms.RichTextBox NoteTextBox;
+        private System.Windows.Forms.TabPage Answer_Code;
+        private System.Windows.Forms.RichTextBox problemcode;
+        private System.Windows.Forms.RichTextBox StandarOutputrichTextBox;
+        private System.Windows.Forms.TabPage InputSample;
+        private System.Windows.Forms.RichTextBox InputSamplerichTextBox;
+        private System.Windows.Forms.TabPage OutputSample;
+        private System.Windows.Forms.RichTextBox OutputSamplerichTextBox;
     }
 }

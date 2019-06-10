@@ -252,7 +252,9 @@ namespace Team_Agile.Pages
             }
 
             String res = runner.run();
-            MessageBox.Show(res);
+            StdAnswerOutputrichTextBox.Text = res;
+            Problem_tabControl.SelectedTab = Standard_Answer_Output_Browse;
+            //MessageBox.Show(res);
         }
 
         private void btn_Run_Code_Click(object sender,EventArgs e)
@@ -293,7 +295,8 @@ namespace Team_Agile.Pages
             }
 
             String res = runner.run();
-            MessageBox.Show(res);
+            Browser_output.Text = res;
+            Answer_tabControl.SelectedTab = Browse_Output;
             if(res==selectedProblem.OutputSample)
             {
                 this.Main_TreeView.SelectedNode.ImageIndex = 1;

@@ -15,12 +15,25 @@ namespace Team_Agile.Pages
     public partial class Student_Interface : Form
     {
         StructureOfProblem selectedProblem;
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
 
         public Student_Interface()
         {
             InitializeComponent();
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
         private void Answer_Code_Click(object sender, EventArgs e)
         {
 
@@ -136,9 +149,11 @@ namespace Team_Agile.Pages
         {
             this.ProblemDec.Text = problem.QuestionDescription;
             this.StandardAnswer.Text = problem.Problemcode;
-            this.Standard_output.Text = problem.OutputSample;
+            this.StandarOutputrichTextBox.Text = problem.OutputSample;
             this.label_Exercise_Name.Text = problem.QuestionName;
             this.ProblemWebBrowser.DocumentText = problem.QuestionDescription;
+            this.InputSamplerichTextBox.Text = problem.InputSample;
+            this.OutputSamplerichTextBox.Text = problem.OutputSample;
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -176,7 +191,7 @@ namespace Team_Agile.Pages
                 int j = 0;
                 foreach(Match m in mc)
                 {
-                    MessageBox.Show(m.Value);
+                    //MessageBox.Show(m.Value);
                     runner.Code = runner.Code.Replace(m.Value, "$_GET['parameter" + j + "']");
                     j++;
                 }
@@ -186,7 +201,8 @@ namespace Team_Agile.Pages
             }
            
             String res = runner.run();
-            MessageBox.Show(res);
+            StandarOutputrichTextBox.Text = res;
+            Problem_tabControl.SelectedTab = Standard_Answer_Output_Browse;
         }
 
         private void btn_Run_Code_Click(object sender, EventArgs e)
@@ -218,7 +234,7 @@ namespace Team_Agile.Pages
                 int j = 0;
                 foreach (Match m in mc)
                 {
-                    MessageBox.Show(m.Value);
+                    //MessageBox.Show(m.Value);
                     runner.Code = runner.Code.Replace(m.Value, "$_GET['parameter" + j + "']");
                     j++;
                 }
@@ -228,14 +244,15 @@ namespace Team_Agile.Pages
             }
 
             String res = runner.run();
-            MessageBox.Show(res);
+            Browser_output.Text = res;
+            Answer_tabControl.SelectedTab = Browse_Output;
             if (res == selectedProblem.OutputSample)
             {
                 this.Main_TreeView.SelectedNode.ImageIndex = 1;
                 selectedProblem.Status = 1;
                 MessageBox.Show("Accept");
                 ProblemList.UpdateStatus(selectedProblem);
-
+               
             }
             else
             {
@@ -245,6 +262,7 @@ namespace Team_Agile.Pages
                 ProblemList.UpdateStatus(selectedProblem);
             }
             this.Browser_output.Text = res;
+            this.Main_TreeView.Invalidate();
         }
 
         private void btn_See_Answer_Click(object sender, EventArgs e)
