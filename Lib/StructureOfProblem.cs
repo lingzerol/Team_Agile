@@ -24,6 +24,7 @@ namespace Lib
         private string hint;
         private int problemID;
         private string problemcode;
+        private int status;
 
         public StructureOfProblem()
         {
@@ -41,6 +42,7 @@ namespace Lib
             hint = "";
             problemID=-1;
             problemcode = "";
+            status = 0;
     }
 
         public string QuestionName { get => questionName; set => questionName = value; }
@@ -57,5 +59,6 @@ namespace Lib
         public string Hint { get => hint; set => hint = value; }
         public int ProblemID { get => problemID; set => problemID = value; }
         public string Problemcode { get => problemcode; set => problemcode = value; }
+        public int Status { get => status; set => status = value; }
     }
 }

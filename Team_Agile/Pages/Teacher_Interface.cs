@@ -26,6 +26,7 @@ namespace Team_Agile.Pages
             this.Main_TreeView.LabelEdit = true;//可编辑状态。
             //添加一个节点，这个结点是根节点。
             TreeNode node = new TreeNode();
+            Main_TreeView.ImageList = imageList1;
             node.Text = "Php/Mysql三日通";
             this.Main_TreeView.Nodes.Add(node);
             TreeNode node1 = new TreeNode();
@@ -35,7 +36,20 @@ namespace Team_Agile.Pages
             {
                 TreeNode minnode = new TreeNode();
                 minnode.Text = ProblemList.GetProblem(key).QuestionName;
+                if(ProblemList.GetProblem(key).Status == 1)
+                {
+                    minnode.ImageIndex = 1;
+                }else if(ProblemList.GetProblem(key).Status == 0)
+                {
+                    minnode.ImageIndex = 0;
+                }
+                else
+                {
+                    minnode.ImageIndex = 2;
+                }
+
                 node1.Nodes.Add(minnode);
+
             }
         }
 
@@ -95,17 +109,32 @@ namespace Team_Agile.Pages
                 }
             }
         }
-
+        //0未完成，1是通过，2是错误
         private void Main_TreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            
             if (e.Action == TreeViewAction.ByMouse) {
-                TreeNode selected = e.Node;
                 foreach (int key in problems.Keys)
                 {
-                    if (this.Main_TreeView.SelectedNode.Text == ProblemList.GetProblem(key).QuestionName)
+                    if (e.Node.Text == ProblemList.GetProblem(key).QuestionName)
                     {
                         selectedProblem = ProblemList.GetProblem(key);
                         ShowProblem(ProblemList.GetProblem(key));
+                        if (ProblemList.GetProblem(key).Status == 1)
+                        {
+                            MessageBox.Show("one:"+e.Node.ImageIndex.ToString());
+                            e.Node.ImageIndex = 1;                      
+                        }
+                        else if (ProblemList.GetProblem(key).Status == 0)
+                        {
+                            MessageBox.Show("zero:"+e.Node.ImageIndex.ToString());
+                            e.Node.ImageIndex = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("two:"+e.Node.ImageIndex.ToString());
+                            e.Node.ImageIndex = 2;
+                        }
                     }
                 }
 
@@ -158,6 +187,7 @@ namespace Team_Agile.Pages
 
         private void Problem_Edit_Click(object sender, EventArgs e)
         {
+            if(this.Main_TreeView.SelectedNode!=null)
             this.Main_TreeView.SelectedNode.BeginEdit();
 
         }
@@ -209,7 +239,6 @@ namespace Team_Agile.Pages
                 int j = 0;
                 foreach (Match m in mc)
                 {
-                    MessageBox.Show(m.Value);
                     runner.Code = runner.Code.Replace(m.Value, "$_GET['parameter" + j + "']");
                     j++;
                 }
@@ -222,7 +251,7 @@ namespace Team_Agile.Pages
             MessageBox.Show(res);
         }
 
-        private void btn_Run_Code_Click(object sender, EventArgs e)
+        private void btn_Run_Code_Click(object sender,EventArgs e)
         {
             if (selectedProblem == null)
             {
@@ -251,7 +280,6 @@ namespace Team_Agile.Pages
                 int j = 0;
                 foreach (Match m in mc)
                 {
-                    MessageBox.Show(m.Value);
                     runner.Code = runner.Code.Replace(m.Value, "$_GET['parameter" + j + "']");
                     j++;
                 }
@@ -262,6 +290,21 @@ namespace Team_Agile.Pages
 
             String res = runner.run();
             MessageBox.Show(res);
+            if(res==selectedProblem.OutputSample)
+            {
+                this.Main_TreeView.SelectedNode.ImageIndex = 1;
+                selectedProblem.Status = 1;
+                MessageBox.Show("Accept");
+                ProblemList.UpdateStatus(selectedProblem);
+
+            }
+            else
+            {
+                this.Main_TreeView.SelectedNode.ImageIndex = 2;
+                selectedProblem.Status = -1;
+                MessageBox.Show("WrongAnswer");
+                ProblemList.UpdateStatus(selectedProblem);
+            }
             this.Browser_output.Text = res;
         }
 
