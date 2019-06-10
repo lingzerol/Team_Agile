@@ -122,17 +122,14 @@ namespace Team_Agile.Pages
                         ShowProblem(ProblemList.GetProblem(key));
                         if (ProblemList.GetProblem(key).Status == 1)
                         {
-                            MessageBox.Show("one:"+e.Node.ImageIndex.ToString());
                             e.Node.ImageIndex = 1;                      
                         }
                         else if (ProblemList.GetProblem(key).Status == 0)
                         {
-                            MessageBox.Show("zero:"+e.Node.ImageIndex.ToString());
                             e.Node.ImageIndex = 0;
                         }
                         else
                         {
-                            MessageBox.Show("two:"+e.Node.ImageIndex.ToString());
                             e.Node.ImageIndex = 2;
                         }
                     }
@@ -151,12 +148,15 @@ namespace Team_Agile.Pages
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            StructureOfProblem pro=null;
             foreach (int key in problems.Keys)
             {
                 if (this.Main_TreeView.SelectedNode.Text == ProblemList.GetProblem(key).QuestionName)
                 {
-                    ProblemList.GetProblem(key).QuestionDescription = this.ProDescTextBox.Text;
-                   
+                    ProblemList.GetProblem(key).QuestionDescription = this.ProblemWebBrowser.Text;
+                    ProblemList.GetProblem(key).OutputSample = this.Standard_output.Text;
+                    ProblemList.GetProblem(key).Problemcode = this.StdAnswerTextBox.Text;                 
+                    pro = ProblemList.GetProblem(key);
                 }
                 if(ProblemList.GetProblem(key).QuestionName=="新练习")
                 {
@@ -164,7 +164,8 @@ namespace Team_Agile.Pages
                     ProblemList.GetProblem(key).QuestionDescription = this.ProDescTextBox.Text;
                 }
             }
-            ProblemList.Save();
+            if(pro!=null)
+                ProblemList.UpdateStatus(pro);
         }
 
         private void ProExportBtn_Click(object sender, EventArgs e)
@@ -322,7 +323,13 @@ namespace Team_Agile.Pages
         {
             if (Problem_tabControl.SelectedTab.Name == "Problem_Description") {
                 this.ProblemWebBrowser.DocumentText = this.ProDescTextBox.Text;
+                this.ProblemWebBrowser.ScriptErrorsSuppressed = true;
             }
+        }
+
+        private void ProblemWebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
         }
     }
 }

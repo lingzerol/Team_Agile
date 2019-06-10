@@ -147,7 +147,7 @@ namespace Team_Agile.Pages
             {
                 if (this.Main_TreeView.SelectedNode.Text == ProblemList.GetProblem(key).QuestionName)
                 {
-                    ProblemList.GetProblem(key).QuestionDescription = this.Problem_Description_HTML.Text;
+                // ProblemList.GetProblem(key).QuestionDescription = this.Problem_Description_HTML.Text;
                 }
             }
             ProblemList.Save();

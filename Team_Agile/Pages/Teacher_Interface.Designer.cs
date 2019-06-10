@@ -87,7 +87,7 @@ namespace Team_Agile.Pages
             this.TreeViewPanel.Controls.Add(this.ProDelBtn);
             this.TreeViewPanel.Controls.Add(this.Main_TreeView);
             this.TreeViewPanel.Location = new System.Drawing.Point(7, 6);
-            this.TreeViewPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TreeViewPanel.Margin = new System.Windows.Forms.Padding(4);
             this.TreeViewPanel.Name = "TreeViewPanel";
             this.TreeViewPanel.Size = new System.Drawing.Size(267, 688);
             this.TreeViewPanel.TabIndex = 0;
@@ -120,7 +120,7 @@ namespace Team_Agile.Pages
             // 
             this.ProAddBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.ProAddBtn.Location = new System.Drawing.Point(45, 575);
-            this.ProAddBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProAddBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ProAddBtn.Name = "ProAddBtn";
             this.ProAddBtn.Size = new System.Drawing.Size(173, 38);
             this.ProAddBtn.TabIndex = 0;
@@ -132,7 +132,7 @@ namespace Team_Agile.Pages
             // 
             this.ProDelBtn.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.ProDelBtn.Location = new System.Drawing.Point(45, 630);
-            this.ProDelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProDelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ProDelBtn.Name = "ProDelBtn";
             this.ProDelBtn.Size = new System.Drawing.Size(173, 38);
             this.ProDelBtn.TabIndex = 2;
@@ -144,7 +144,7 @@ namespace Team_Agile.Pages
             // 
             this.Main_TreeView.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.Main_TreeView.Location = new System.Drawing.Point(0, 0);
-            this.Main_TreeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Main_TreeView.Margin = new System.Windows.Forms.Padding(4);
             this.Main_TreeView.Name = "Main_TreeView";
             this.Main_TreeView.Size = new System.Drawing.Size(265, 686);
             this.Main_TreeView.TabIndex = 1;
@@ -163,7 +163,7 @@ namespace Team_Agile.Pages
             this.panel_Problem.Controls.Add(this.Problem_tabControl);
             this.panel_Problem.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.panel_Problem.Location = new System.Drawing.Point(281, 6);
-            this.panel_Problem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Problem.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Problem.Name = "panel_Problem";
             this.panel_Problem.Size = new System.Drawing.Size(901, 412);
             this.panel_Problem.TabIndex = 1;
@@ -203,7 +203,7 @@ namespace Team_Agile.Pages
             // btn_Run_Code
             // 
             this.btn_Run_Code.Location = new System.Drawing.Point(737, 11);
-            this.btn_Run_Code.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Run_Code.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Run_Code.Name = "btn_Run_Code";
             this.btn_Run_Code.Size = new System.Drawing.Size(144, 38);
             this.btn_Run_Code.TabIndex = 4;
@@ -214,7 +214,7 @@ namespace Team_Agile.Pages
             // btn_Run_Answer
             // 
             this.btn_Run_Answer.Location = new System.Drawing.Point(587, 12);
-            this.btn_Run_Answer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Run_Answer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Run_Answer.Name = "btn_Run_Answer";
             this.btn_Run_Answer.Size = new System.Drawing.Size(143, 38);
             this.btn_Run_Answer.TabIndex = 3;
@@ -225,7 +225,7 @@ namespace Team_Agile.Pages
             // btn_See_Answer
             // 
             this.btn_See_Answer.Location = new System.Drawing.Point(443, 11);
-            this.btn_See_Answer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_See_Answer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_See_Answer.Name = "btn_See_Answer";
             this.btn_See_Answer.Size = new System.Drawing.Size(135, 38);
             this.btn_See_Answer.TabIndex = 2;
@@ -236,7 +236,7 @@ namespace Team_Agile.Pages
             // btn_Save
             // 
             this.btn_Save.Location = new System.Drawing.Point(351, 11);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(84, 38);
             this.btn_Save.TabIndex = 1;
@@ -252,7 +252,7 @@ namespace Team_Agile.Pages
             this.Problem_tabControl.Controls.Add(this.Standard_Answer_Original_Output);
             this.Problem_tabControl.Controls.Add(this.Standard_Answer_Output_Browse);
             this.Problem_tabControl.Location = new System.Drawing.Point(0, 60);
-            this.Problem_tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Problem_tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.Problem_tabControl.Name = "Problem_tabControl";
             this.Problem_tabControl.SelectedIndex = 0;
             this.Problem_tabControl.Size = new System.Drawing.Size(881, 352);
@@ -264,9 +264,9 @@ namespace Team_Agile.Pages
             this.Problem_Description.Controls.Add(this.ProblemWebBrowser);
             this.Problem_Description.Controls.Add(this.ProblemDec);
             this.Problem_Description.Location = new System.Drawing.Point(4, 32);
-            this.Problem_Description.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Problem_Description.Margin = new System.Windows.Forms.Padding(4);
             this.Problem_Description.Name = "Problem_Description";
-            this.Problem_Description.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Problem_Description.Padding = new System.Windows.Forms.Padding(4);
             this.Problem_Description.Size = new System.Drawing.Size(873, 316);
             this.Problem_Description.TabIndex = 0;
             this.Problem_Description.Text = "问题描述";
@@ -277,11 +277,12 @@ namespace Team_Agile.Pages
             // 
             this.ProblemWebBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProblemWebBrowser.Location = new System.Drawing.Point(4, 4);
-            this.ProblemWebBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProblemWebBrowser.Margin = new System.Windows.Forms.Padding(4);
             this.ProblemWebBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.ProblemWebBrowser.Name = "ProblemWebBrowser";
             this.ProblemWebBrowser.Size = new System.Drawing.Size(865, 308);
             this.ProblemWebBrowser.TabIndex = 1;
+            this.ProblemWebBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.ProblemWebBrowser_DocumentCompleted);
             // 
             // ProblemDec
             // 
@@ -299,9 +300,9 @@ namespace Team_Agile.Pages
             // 
             this.Problem_Description_HTML.Controls.Add(this.ProDescTextBox);
             this.Problem_Description_HTML.Location = new System.Drawing.Point(4, 32);
-            this.Problem_Description_HTML.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Problem_Description_HTML.Margin = new System.Windows.Forms.Padding(4);
             this.Problem_Description_HTML.Name = "Problem_Description_HTML";
-            this.Problem_Description_HTML.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Problem_Description_HTML.Padding = new System.Windows.Forms.Padding(4);
             this.Problem_Description_HTML.Size = new System.Drawing.Size(873, 316);
             this.Problem_Description_HTML.TabIndex = 1;
             this.Problem_Description_HTML.Text = "问题描述HTML";
@@ -312,7 +313,7 @@ namespace Team_Agile.Pages
             this.ProDescTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProDescTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProDescTextBox.Location = new System.Drawing.Point(4, 4);
-            this.ProDescTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProDescTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProDescTextBox.Name = "ProDescTextBox";
             this.ProDescTextBox.Size = new System.Drawing.Size(865, 308);
             this.ProDescTextBox.TabIndex = 0;
@@ -322,9 +323,9 @@ namespace Team_Agile.Pages
             // 
             this.Standard_Answer.Controls.Add(this.StdAnswerTextBox);
             this.Standard_Answer.Location = new System.Drawing.Point(4, 32);
-            this.Standard_Answer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Standard_Answer.Margin = new System.Windows.Forms.Padding(4);
             this.Standard_Answer.Name = "Standard_Answer";
-            this.Standard_Answer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Standard_Answer.Padding = new System.Windows.Forms.Padding(4);
             this.Standard_Answer.Size = new System.Drawing.Size(873, 316);
             this.Standard_Answer.TabIndex = 2;
             this.Standard_Answer.Text = "标准答案";
@@ -335,7 +336,7 @@ namespace Team_Agile.Pages
             this.StdAnswerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.StdAnswerTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StdAnswerTextBox.Location = new System.Drawing.Point(4, 4);
-            this.StdAnswerTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StdAnswerTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.StdAnswerTextBox.Name = "StdAnswerTextBox";
             this.StdAnswerTextBox.Size = new System.Drawing.Size(865, 308);
             this.StdAnswerTextBox.TabIndex = 0;
@@ -345,9 +346,9 @@ namespace Team_Agile.Pages
             // 
             this.Standard_Answer_Original_Output.Controls.Add(this.Standard_output);
             this.Standard_Answer_Original_Output.Location = new System.Drawing.Point(4, 32);
-            this.Standard_Answer_Original_Output.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Standard_Answer_Original_Output.Margin = new System.Windows.Forms.Padding(4);
             this.Standard_Answer_Original_Output.Name = "Standard_Answer_Original_Output";
-            this.Standard_Answer_Original_Output.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Standard_Answer_Original_Output.Padding = new System.Windows.Forms.Padding(4);
             this.Standard_Answer_Original_Output.Size = new System.Drawing.Size(873, 316);
             this.Standard_Answer_Original_Output.TabIndex = 3;
             this.Standard_Answer_Original_Output.Text = "标准答案原始输出";
@@ -368,9 +369,9 @@ namespace Team_Agile.Pages
             // Standard_Answer_Output_Browse
             // 
             this.Standard_Answer_Output_Browse.Location = new System.Drawing.Point(4, 32);
-            this.Standard_Answer_Output_Browse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Standard_Answer_Output_Browse.Margin = new System.Windows.Forms.Padding(4);
             this.Standard_Answer_Output_Browse.Name = "Standard_Answer_Output_Browse";
-            this.Standard_Answer_Output_Browse.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Standard_Answer_Output_Browse.Padding = new System.Windows.Forms.Padding(4);
             this.Standard_Answer_Output_Browse.Size = new System.Drawing.Size(873, 316);
             this.Standard_Answer_Output_Browse.TabIndex = 4;
             this.Standard_Answer_Output_Browse.Text = "标准答案输出浏览";
@@ -381,7 +382,7 @@ namespace Team_Agile.Pages
             this.panel_Answer.AutoScroll = true;
             this.panel_Answer.Controls.Add(this.Answer_tabControl);
             this.panel_Answer.Location = new System.Drawing.Point(281, 426);
-            this.panel_Answer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Answer.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Answer.Name = "panel_Answer";
             this.panel_Answer.Size = new System.Drawing.Size(887, 268);
             this.panel_Answer.TabIndex = 2;
@@ -394,7 +395,7 @@ namespace Team_Agile.Pages
             this.Answer_tabControl.Controls.Add(this.Note);
             this.Answer_tabControl.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.Answer_tabControl.Location = new System.Drawing.Point(0, 0);
-            this.Answer_tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Answer_tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.Answer_tabControl.Name = "Answer_tabControl";
             this.Answer_tabControl.SelectedIndex = 0;
             this.Answer_tabControl.Size = new System.Drawing.Size(881, 268);
@@ -404,9 +405,9 @@ namespace Team_Agile.Pages
             // 
             this.Answer_Code.Controls.Add(this.CodeTextBox);
             this.Answer_Code.Location = new System.Drawing.Point(4, 32);
-            this.Answer_Code.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Answer_Code.Margin = new System.Windows.Forms.Padding(4);
             this.Answer_Code.Name = "Answer_Code";
-            this.Answer_Code.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Answer_Code.Padding = new System.Windows.Forms.Padding(4);
             this.Answer_Code.Size = new System.Drawing.Size(873, 232);
             this.Answer_Code.TabIndex = 0;
             this.Answer_Code.Text = "解答代码";
@@ -417,7 +418,7 @@ namespace Team_Agile.Pages
             this.CodeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CodeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CodeTextBox.Location = new System.Drawing.Point(4, 4);
-            this.CodeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CodeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CodeTextBox.Name = "CodeTextBox";
             this.CodeTextBox.Size = new System.Drawing.Size(865, 224);
             this.CodeTextBox.TabIndex = 0;
@@ -427,9 +428,9 @@ namespace Team_Agile.Pages
             // Original_Output
             // 
             this.Original_Output.Location = new System.Drawing.Point(4, 32);
-            this.Original_Output.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Original_Output.Margin = new System.Windows.Forms.Padding(4);
             this.Original_Output.Name = "Original_Output";
-            this.Original_Output.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Original_Output.Padding = new System.Windows.Forms.Padding(4);
             this.Original_Output.Size = new System.Drawing.Size(873, 232);
             this.Original_Output.TabIndex = 1;
             this.Original_Output.Text = "原始输出";
@@ -439,9 +440,9 @@ namespace Team_Agile.Pages
             // 
             this.Browse_Output.Controls.Add(this.Browser_output);
             this.Browse_Output.Location = new System.Drawing.Point(4, 32);
-            this.Browse_Output.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Browse_Output.Margin = new System.Windows.Forms.Padding(4);
             this.Browse_Output.Name = "Browse_Output";
-            this.Browse_Output.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Browse_Output.Padding = new System.Windows.Forms.Padding(4);
             this.Browse_Output.Size = new System.Drawing.Size(873, 232);
             this.Browse_Output.TabIndex = 2;
             this.Browse_Output.Text = "浏览输出";
@@ -460,9 +461,9 @@ namespace Team_Agile.Pages
             // Note
             // 
             this.Note.Location = new System.Drawing.Point(4, 32);
-            this.Note.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Note.Margin = new System.Windows.Forms.Padding(4);
             this.Note.Name = "Note";
-            this.Note.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Note.Padding = new System.Windows.Forms.Padding(4);
             this.Note.Size = new System.Drawing.Size(873, 232);
             this.Note.TabIndex = 3;
             this.Note.Text = "笔记";
@@ -484,7 +485,7 @@ namespace Team_Agile.Pages
             this.Controls.Add(this.panel_Answer);
             this.Controls.Add(this.panel_Problem);
             this.Controls.Add(this.TreeViewPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Teacher_Interface";
             this.Text = "PHP编程开放实验工具-教师端";
             this.Load += new System.EventHandler(this.Teacher_Interface_Load);
