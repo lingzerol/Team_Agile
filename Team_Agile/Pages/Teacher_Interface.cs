@@ -141,6 +141,8 @@ namespace Team_Agile.Pages
         private void ShowProblem(StructureOfProblem problem) {
             this.ProblemDec.Text = problem.QuestionDescription;
             this.StdAnswerTextBox.Text = problem.Problemcode;
+            this.InputSampleText.Text = problem.InputSample;
+            this.OutputsampleText.Text = problem.OutputSample;
             this.Standard_output.Text = problem.OutputSample;
             this.label_Exercise_Name.Text = problem.QuestionName;
             this.ProblemWebBrowser.DocumentText = problem.QuestionDescription;
@@ -153,9 +155,10 @@ namespace Team_Agile.Pages
             {
                 if (this.Main_TreeView.SelectedNode.Text == ProblemList.GetProblem(key).QuestionName)
                 {
-                    ProblemList.GetProblem(key).QuestionDescription = this.ProblemWebBrowser.Text;
-                    ProblemList.GetProblem(key).OutputSample = this.Standard_output.Text;
-                    ProblemList.GetProblem(key).Problemcode = this.StdAnswerTextBox.Text;                 
+                    ProblemList.GetProblem(key).QuestionDescription = this.ProDescTextBox.Text;
+                    ProblemList.GetProblem(key).OutputSample = this.OutputsampleText.Text;
+                    ProblemList.GetProblem(key).Problemcode = this.StdAnswerTextBox.Text;
+                    ProblemList.GetProblem(key).InputSample = this.InputSampleText.Text;
                     pro = ProblemList.GetProblem(key);
                 }
                 if(ProblemList.GetProblem(key).QuestionName=="新练习")

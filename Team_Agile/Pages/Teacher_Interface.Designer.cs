@@ -66,6 +66,10 @@ namespace Team_Agile.Pages
             this.Browser_output = new System.Windows.Forms.RichTextBox();
             this.Note = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.InputSample = new System.Windows.Forms.TabPage();
+            this.OutputSample = new System.Windows.Forms.TabPage();
+            this.InputSampleText = new System.Windows.Forms.RichTextBox();
+            this.OutputsampleText = new System.Windows.Forms.RichTextBox();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
@@ -77,6 +81,8 @@ namespace Team_Agile.Pages
             this.Answer_tabControl.SuspendLayout();
             this.Answer_Code.SuspendLayout();
             this.Browse_Output.SuspendLayout();
+            this.InputSample.SuspendLayout();
+            this.OutputSample.SuspendLayout();
             this.SuspendLayout();
             // 
             // TreeViewPanel
@@ -251,6 +257,8 @@ namespace Team_Agile.Pages
             this.Problem_tabControl.Controls.Add(this.Standard_Answer);
             this.Problem_tabControl.Controls.Add(this.Standard_Answer_Original_Output);
             this.Problem_tabControl.Controls.Add(this.Standard_Answer_Output_Browse);
+            this.Problem_tabControl.Controls.Add(this.InputSample);
+            this.Problem_tabControl.Controls.Add(this.OutputSample);
             this.Problem_tabControl.Location = new System.Drawing.Point(0, 60);
             this.Problem_tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.Problem_tabControl.Name = "Problem_tabControl";
@@ -477,6 +485,44 @@ namespace Team_Agile.Pages
             this.imageList1.Images.SetKeyName(1, "正确.png");
             this.imageList1.Images.SetKeyName(2, "错误.png");
             // 
+            // InputSample
+            // 
+            this.InputSample.Controls.Add(this.InputSampleText);
+            this.InputSample.Location = new System.Drawing.Point(4, 32);
+            this.InputSample.Name = "InputSample";
+            this.InputSample.Padding = new System.Windows.Forms.Padding(3);
+            this.InputSample.Size = new System.Drawing.Size(873, 316);
+            this.InputSample.TabIndex = 5;
+            this.InputSample.Text = "输入样例";
+            this.InputSample.UseVisualStyleBackColor = true;
+            // 
+            // OutputSample
+            // 
+            this.OutputSample.Controls.Add(this.OutputsampleText);
+            this.OutputSample.Location = new System.Drawing.Point(4, 32);
+            this.OutputSample.Name = "OutputSample";
+            this.OutputSample.Padding = new System.Windows.Forms.Padding(3);
+            this.OutputSample.Size = new System.Drawing.Size(873, 316);
+            this.OutputSample.TabIndex = 6;
+            this.OutputSample.Text = "输出样例";
+            this.OutputSample.UseVisualStyleBackColor = true;
+            // 
+            // InputSampleText
+            // 
+            this.InputSampleText.Location = new System.Drawing.Point(0, 0);
+            this.InputSampleText.Name = "InputSampleText";
+            this.InputSampleText.Size = new System.Drawing.Size(877, 317);
+            this.InputSampleText.TabIndex = 0;
+            this.InputSampleText.Text = "";
+            // 
+            // OutputsampleText
+            // 
+            this.OutputsampleText.Location = new System.Drawing.Point(0, 0);
+            this.OutputsampleText.Name = "OutputsampleText";
+            this.OutputsampleText.Size = new System.Drawing.Size(877, 316);
+            this.OutputsampleText.TabIndex = 0;
+            this.OutputsampleText.Text = "";
+            // 
             // Teacher_Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -501,6 +547,8 @@ namespace Team_Agile.Pages
             this.Answer_tabControl.ResumeLayout(false);
             this.Answer_Code.ResumeLayout(false);
             this.Browse_Output.ResumeLayout(false);
+            this.InputSample.ResumeLayout(false);
+            this.OutputSample.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -541,5 +589,9 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.RichTextBox Browser_output;
         private System.Windows.Forms.WebBrowser ProblemWebBrowser;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TabPage InputSample;
+        private System.Windows.Forms.RichTextBox InputSampleText;
+        private System.Windows.Forms.TabPage OutputSample;
+        private System.Windows.Forms.RichTextBox OutputsampleText;
     }
 }
