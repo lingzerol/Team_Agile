@@ -125,7 +125,7 @@ namespace Team_Agile.Pages
             this.StandardAnswer.Text = problem.Problemcode;
             this.Standard_output.Text = problem.OutputSample;
             this.label_Exercise_Name.Text = problem.QuestionName;
-
+            this.ProblemWebBrowser.DocumentText = problem.QuestionDescription;
         }
 
         private void btn_Save_Click(object sender, EventArgs e)

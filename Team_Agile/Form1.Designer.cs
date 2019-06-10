@@ -33,20 +33,22 @@
             // 
             // Pannel
             // 
-            this.Pannel.Location = new System.Drawing.Point(12, 12);
+            this.Pannel.Location = new System.Drawing.Point(9, 10);
+            this.Pannel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Pannel.Name = "Pannel";
-            this.Pannel.Size = new System.Drawing.Size(1208, 689);
+            this.Pannel.Size = new System.Drawing.Size(906, 551);
             this.Pannel.TabIndex = 0;
             this.Pannel.Paint += new System.Windows.Forms.PaintEventHandler(this.Pannel_Paint);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 713);
+            this.ClientSize = new System.Drawing.Size(924, 561);
             this.Controls.Add(this.Pannel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "PHP编程开放实验工具";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

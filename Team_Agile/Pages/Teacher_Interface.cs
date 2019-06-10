@@ -117,7 +117,7 @@ namespace Team_Agile.Pages
             this.StdAnswerTextBox.Text = problem.Problemcode;
             this.Standard_output.Text = problem.OutputSample;
             this.label_Exercise_Name.Text = problem.QuestionName;
-
+            this.ProblemWebBrowser.DocumentText = problem.QuestionDescription;
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -273,6 +273,13 @@ namespace Team_Agile.Pages
                 return;
             }
             this.Problem_tabControl.SelectedIndex = 2;
+        }
+
+        private void Problem_tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Problem_tabControl.SelectedTab.Name == "Problem_Description") {
+                this.ProblemWebBrowser.DocumentText = this.ProDescTextBox.Text;
+            }
         }
     }
 }

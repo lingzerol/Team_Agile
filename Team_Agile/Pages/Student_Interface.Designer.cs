@@ -59,6 +59,7 @@ namespace Team_Agile.Pages
             this.Browser_output = new System.Windows.Forms.RichTextBox();
             this.Note = new System.Windows.Forms.TabPage();
             this.NoteTextBox = new System.Windows.Forms.RichTextBox();
+            this.ProblemWebBrowser = new System.Windows.Forms.WebBrowser();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
@@ -215,6 +216,7 @@ namespace Team_Agile.Pages
             // 
             // Problem_Description
             // 
+            this.Problem_Description.Controls.Add(this.ProblemWebBrowser);
             this.Problem_Description.Controls.Add(this.ProblemDec);
             this.Problem_Description.Location = new System.Drawing.Point(4, 28);
             this.Problem_Description.Name = "Problem_Description";
@@ -394,6 +396,15 @@ namespace Team_Agile.Pages
             this.NoteTextBox.TabIndex = 1;
             this.NoteTextBox.Text = "";
             // 
+            // ProblemWebBrowser
+            // 
+            this.ProblemWebBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProblemWebBrowser.Location = new System.Drawing.Point(3, 3);
+            this.ProblemWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.ProblemWebBrowser.Name = "ProblemWebBrowser";
+            this.ProblemWebBrowser.Size = new System.Drawing.Size(647, 244);
+            this.ProblemWebBrowser.TabIndex = 1;
+            // 
             // Student_Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -453,5 +464,6 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.RichTextBox Standard_output;
         private System.Windows.Forms.RichTextBox Browser_output;
         private System.Windows.Forms.RichTextBox NoteTextBox;
+        private System.Windows.Forms.WebBrowser ProblemWebBrowser;
     }
 }
