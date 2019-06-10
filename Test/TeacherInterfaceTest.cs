@@ -3,7 +3,7 @@ using OpenQA.Selenium.Appium.Windows;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Threading;
-
+using System.IO;
 namespace Test
 {
     /// <summary>
@@ -12,35 +12,31 @@ namespace Test
     [TestClass]
     public class TeacherInterfaceTest
     {
-        private string url = "http://127.0.0.1:4723/";
-        private System.Diagnostics.Process pProcess;
-        [TestInitialize]
-        public void Init() {
-            pProcess = new System.Diagnostics.Process();
-            pProcess.StartInfo.FileName = @"G:\visual studio project\Projects\Team_Agile\Test\WinAppDriver\WinAppDriver.exe";
-            pProcess.StartInfo.RedirectStandardInput = true;
-            pProcess.StartInfo.UseShellExecute = false;
-            pProcess.StartInfo.RedirectStandardOutput = true;
-            pProcess.StartInfo.RedirectStandardError = true;
-            //pProcess.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            pProcess.StartInfo.CreateNoWindow = true; //not diplay a windows
-            pProcess.Start();
-
-        }
 
         [TestMethod]
-        public void TestMethod1()
+        public void saveProblemTest()
         {
             DesiredCapabilities appCapabilities = new DesiredCapabilities();
-            appCapabilities.SetCapability("app", "\"G:\\visual studio project\\Projects\\Team_Agile\\Team_Agile\\bin\\Debug\\Team_Agile.exe\"");
+            string str=Environment.CurrentDirectory;
+            appCapabilities.SetCapability("app", Environment.CurrentDirectory+"\\..\\..\\..\\Team_Agile\\bin\\Debug\\Team_Agile.exe");
 
             WindowsDriver<WindowsElement>  AlarmClockSession = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), appCapabilities);
             Assert.IsNotNull(AlarmClockSession);
             WindowsElement teacher_btn=AlarmClockSession.FindElementByName("教师");
             Assert.IsNotNull(teacher_btn);
             teacher_btn.Click();
-            pProcess.StandardInput.WriteLine("\n");
-            pProcess.WaitForExit();
+            Thread.Sleep(2000);
+ 
+            WindowsElement save_btn = AlarmClockSession.FindElementByName("导出");
+            Assert.IsNotNull(save_btn);
+            save_btn.Click();
+            Thread.Sleep(2000);
+            WindowsDriver<WindowsElement> save = (WindowsDriver<WindowsElement>)AlarmClockSession.SwitchTo().Window(AlarmClockSession.CurrentWindowHandle);
+            WindowsElement ok_btn = save.FindElementByName("确定");
+            Assert.IsNotNull(ok_btn);
+            ok_btn.Click();
+            AlarmClockSession.CloseApp();
+            Assert.IsTrue(File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Problem.xml"));      
         }
         
     }
