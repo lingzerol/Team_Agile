@@ -35,6 +35,7 @@ namespace Lib
         {
             String cgiFileWithPath = System.IO.Path.Combine(Environment.CurrentDirectory, this.DefaultCGISourceFileName);
             System.IO.File.Delete(cgiFileWithPath);
+            this.Code = "<?php "+ this.Code;
             System.IO.File.WriteAllText(cgiFileWithPath, this.Code);
             if (!System.IO.File.Exists(cgiFileWithPath))
             {

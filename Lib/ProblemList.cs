@@ -100,5 +100,10 @@ namespace Lib
             XmlOperator xmlopertor = new XmlOperator();
             xmlopertor.XMLSerialized(path, problem);
         }
+        public static void UpdateStatus(StructureOfProblem s)
+        {
+            problem[s.ProblemID] = s;
+            Save();
+        }
     }
 }
