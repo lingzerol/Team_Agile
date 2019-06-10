@@ -37,5 +37,15 @@ namespace Team_Agile
         {
 
         }
+
+        private void TeacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(new Teacher_Interface());
+        }
+
+        private void StudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(new Student_Interface());
+        }
     }
 }
