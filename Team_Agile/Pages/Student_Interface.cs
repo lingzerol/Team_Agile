@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using Lib;
 
 namespace Team_Agile.Pages
 {
     public partial class Student_Interface : Form
     {
+        StructureOfProblem selectedProblem;
+
         public Student_Interface()
         {
             InitializeComponent();
@@ -99,6 +102,32 @@ namespace Team_Agile.Pages
             }
         }
 
+        private void Main_TreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (e.Action == TreeViewAction.ByMouse)
+            {
+                TreeNode selected = e.Node;
+                foreach (int key in problems.Keys)
+                {
+                    if (this.Main_TreeView.SelectedNode.Text == ProblemList.GetProblem(key).QuestionName)
+                    {
+                        selectedProblem = ProblemList.GetProblem(key);
+                        ShowProblem(ProblemList.GetProblem(key));
+                    }
+                }
+
+            }
+        }
+
+        private void ShowProblem(StructureOfProblem problem)
+        {
+            this.ProblemDec.Text = problem.QuestionDescription;
+            this.StandardAnswer.Text = problem.Problemcode;
+            this.Standard_output.Text = problem.OutputSample;
+            this.label_Exercise_Name.Text = problem.QuestionName;
+
+        }
+
         private void btn_Save_Click(object sender, EventArgs e)
         {
             foreach (int key in problems.Keys)
@@ -109,6 +138,95 @@ namespace Team_Agile.Pages
                 }
             }
             ProblemList.Save();
+        }
+
+        private void btn_Run_Answer_Click(object sender, EventArgs e)
+        {
+            if (selectedProblem == null)
+            {
+                MessageBox.Show("当前未选择题目");
+                return;
+            }
+            PHPRunner runner = new PHPRunner();
+            //selectedProblem.InputSample = "1 2";
+            //selectedProblem.Problemcode = "<?php echo $_GET['a']; echo $_GET['b'];";
+            runner.Code = selectedProblem.Problemcode;
+            if (selectedProblem.InputSample != "" || selectedProblem.InputSample!=null) {
+                string[] parameters = selectedProblem.InputSample.Split(' ');
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    runner.QueryString += "parameter" + i + "=" + parameters[i] + "&";
+                   
+                    //runner.Code = runner.Code.Replace(Regex.Match(runner.Code,"\\$_GET\\[\\S*\\]$").Value, "$_GET['parameter"+i+"']");
+                }
+                MatchCollection mc = Regex.Matches(runner.Code, "\\$_GET\\[\\S*\\]");
+                int j = 0;
+                foreach(Match m in mc)
+                {
+                    MessageBox.Show(m.Value);
+                    runner.Code = runner.Code.Replace(m.Value, "$_GET['parameter" + j + "']");
+                    j++;
+                }
+                //runner.Code =  runner.Code.Replace("$_GET['a']", "$_GET['parameter0']");
+               // runner.Code = runner.Code.Replace("$_GET['b']", "$_GET['parameter1']");
+                runner.QueryString = runner.QueryString.Substring(0, runner.QueryString.Length - 1);
+            }
+           
+            String res = runner.run();
+            MessageBox.Show(res);
+        }
+
+        private void btn_Run_Code_Click(object sender, EventArgs e)
+        {
+            if (selectedProblem == null)
+            {
+                MessageBox.Show("当前未选择题目");
+                return;
+            }
+            PHPRunner runner = new PHPRunner();
+            //selectedProblem.InputSample = "1 2";
+            //selectedProblem.Problemcode = "<?php echo $_GET['a']; echo $_GET['b'];";
+            if (this.problemcode.Text == "")
+            {
+                MessageBox.Show("请输入解答代码！");
+                return;
+            }
+            runner.Code = this.problemcode.Text;
+            if (selectedProblem.InputSample != "" || selectedProblem.InputSample != null)
+            {
+                string[] parameters = selectedProblem.InputSample.Split(' ');
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    runner.QueryString += "parameter" + i + "=" + parameters[i] + "&";
+
+                    //runner.Code = runner.Code.Replace(Regex.Match(runner.Code,"\\$_GET\\[\\S*\\]$").Value, "$_GET['parameter"+i+"']");
+                }
+                MatchCollection mc = Regex.Matches(runner.Code, "\\$_GET\\[\\S*\\]");
+                int j = 0;
+                foreach (Match m in mc)
+                {
+                    MessageBox.Show(m.Value);
+                    runner.Code = runner.Code.Replace(m.Value, "$_GET['parameter" + j + "']");
+                    j++;
+                }
+                //runner.Code =  runner.Code.Replace("$_GET['a']", "$_GET['parameter0']");
+                // runner.Code = runner.Code.Replace("$_GET['b']", "$_GET['parameter1']");
+                runner.QueryString = runner.QueryString.Substring(0, runner.QueryString.Length - 1);
+            }
+
+            String res = runner.run();
+            MessageBox.Show(res);
+            this.Browser_output.Text = res;
+        }
+
+        private void btn_See_Answer_Click(object sender, EventArgs e)
+        {
+            if (selectedProblem == null)
+            {
+                MessageBox.Show("当前未选择题目");
+                return;
+            }
+            this.Problem_tabControl.SelectedIndex = 2;
         }
     }
 }

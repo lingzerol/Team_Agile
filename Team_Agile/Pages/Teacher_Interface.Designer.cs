@@ -59,14 +59,20 @@ namespace Team_Agile.Pages
             this.Note = new System.Windows.Forms.TabPage();
             this.Problem_Edit = new System.Windows.Forms.Button();
             this.Problem_Add = new System.Windows.Forms.Button();
+            this.ProblemDec = new System.Windows.Forms.RichTextBox();
+            this.Standard_output = new System.Windows.Forms.RichTextBox();
+            this.Browser_output = new System.Windows.Forms.RichTextBox();
             this.TreeViewPanel.SuspendLayout();
             this.panel_Problem.SuspendLayout();
             this.Problem_tabControl.SuspendLayout();
+            this.Problem_Description.SuspendLayout();
             this.Problem_Description_HTML.SuspendLayout();
             this.Standard_Answer.SuspendLayout();
+            this.Standard_Answer_Original_Output.SuspendLayout();
             this.panel_Answer.SuspendLayout();
             this.Answer_tabControl.SuspendLayout();
             this.Answer_Code.SuspendLayout();
+            this.Browse_Output.SuspendLayout();
             this.SuspendLayout();
             // 
             // TreeViewPanel
@@ -175,6 +181,7 @@ namespace Team_Agile.Pages
             this.btn_Run_Code.TabIndex = 4;
             this.btn_Run_Code.Text = "运行解答代码";
             this.btn_Run_Code.UseVisualStyleBackColor = true;
+            this.btn_Run_Code.Click += new System.EventHandler(this.btn_Run_Code_Click);
             // 
             // btn_Run_Answer
             // 
@@ -185,6 +192,7 @@ namespace Team_Agile.Pages
             this.btn_Run_Answer.TabIndex = 3;
             this.btn_Run_Answer.Text = "运行标准答案";
             this.btn_Run_Answer.UseVisualStyleBackColor = true;
+            this.btn_Run_Answer.Click += new System.EventHandler(this.btn_Run_Answer_Click);
             // 
             // btn_See_Answer
             // 
@@ -195,6 +203,7 @@ namespace Team_Agile.Pages
             this.btn_See_Answer.TabIndex = 2;
             this.btn_See_Answer.Text = "查看标准答案";
             this.btn_See_Answer.UseVisualStyleBackColor = true;
+            this.btn_See_Answer.Click += new System.EventHandler(this.btn_See_Answer_Click);
             // 
             // btn_Save
             // 
@@ -223,6 +232,7 @@ namespace Team_Agile.Pages
             // 
             // Problem_Description
             // 
+            this.Problem_Description.Controls.Add(this.ProblemDec);
             this.Problem_Description.Location = new System.Drawing.Point(4, 32);
             this.Problem_Description.Margin = new System.Windows.Forms.Padding(4);
             this.Problem_Description.Name = "Problem_Description";
@@ -231,6 +241,7 @@ namespace Team_Agile.Pages
             this.Problem_Description.TabIndex = 0;
             this.Problem_Description.Text = "问题描述";
             this.Problem_Description.UseVisualStyleBackColor = true;
+            this.Problem_Description.Click += new System.EventHandler(this.Problem_Description_Click);
             // 
             // Problem_Description_HTML
             // 
@@ -280,6 +291,7 @@ namespace Team_Agile.Pages
             // 
             // Standard_Answer_Original_Output
             // 
+            this.Standard_Answer_Original_Output.Controls.Add(this.Standard_output);
             this.Standard_Answer_Original_Output.Location = new System.Drawing.Point(4, 32);
             this.Standard_Answer_Original_Output.Margin = new System.Windows.Forms.Padding(4);
             this.Standard_Answer_Original_Output.Name = "Standard_Answer_Original_Output";
@@ -361,6 +373,7 @@ namespace Team_Agile.Pages
             // 
             // Browse_Output
             // 
+            this.Browse_Output.Controls.Add(this.Browser_output);
             this.Browse_Output.Location = new System.Drawing.Point(4, 32);
             this.Browse_Output.Margin = new System.Windows.Forms.Padding(4);
             this.Browse_Output.Name = "Browse_Output";
@@ -402,6 +415,37 @@ namespace Team_Agile.Pages
             this.Problem_Add.UseVisualStyleBackColor = true;
             this.Problem_Add.Click += new System.EventHandler(this.Problem_Add_Click);
             // 
+            // ProblemDec
+            // 
+            this.ProblemDec.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ProblemDec.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProblemDec.Location = new System.Drawing.Point(0, 0);
+            this.ProblemDec.Name = "ProblemDec";
+            this.ProblemDec.ReadOnly = true;
+            this.ProblemDec.Size = new System.Drawing.Size(873, 313);
+            this.ProblemDec.TabIndex = 0;
+            this.ProblemDec.Text = "";
+            // 
+            // Standard_output
+            // 
+            this.Standard_output.BackColor = System.Drawing.SystemColors.Window;
+            this.Standard_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Standard_output.Location = new System.Drawing.Point(0, 0);
+            this.Standard_output.Name = "Standard_output";
+            this.Standard_output.ReadOnly = true;
+            this.Standard_output.Size = new System.Drawing.Size(873, 316);
+            this.Standard_output.TabIndex = 0;
+            this.Standard_output.Text = "";
+            // 
+            // Browser_output
+            // 
+            this.Browser_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Browser_output.Location = new System.Drawing.Point(0, 0);
+            this.Browser_output.Name = "Browser_output";
+            this.Browser_output.Size = new System.Drawing.Size(873, 232);
+            this.Browser_output.TabIndex = 0;
+            this.Browser_output.Text = "";
+            // 
             // Teacher_Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -418,11 +462,14 @@ namespace Team_Agile.Pages
             this.panel_Problem.ResumeLayout(false);
             this.panel_Problem.PerformLayout();
             this.Problem_tabControl.ResumeLayout(false);
+            this.Problem_Description.ResumeLayout(false);
             this.Problem_Description_HTML.ResumeLayout(false);
             this.Standard_Answer.ResumeLayout(false);
+            this.Standard_Answer_Original_Output.ResumeLayout(false);
             this.panel_Answer.ResumeLayout(false);
             this.Answer_tabControl.ResumeLayout(false);
             this.Answer_Code.ResumeLayout(false);
+            this.Browse_Output.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -458,5 +505,8 @@ namespace Team_Agile.Pages
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Problem_Edit;
         private System.Windows.Forms.Button Problem_Add;
+        private System.Windows.Forms.RichTextBox ProblemDec;
+        private System.Windows.Forms.RichTextBox Standard_output;
+        private System.Windows.Forms.RichTextBox Browser_output;
     }
 }
